@@ -1,39 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  scroll-behavior: smooth;
+  position: relative;
+}
+
 .App {
   text-align: center;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: #cbf1f5;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App-content {
+  margin-left: 16vw;
+  overflow-x: hidden;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  margin: 0;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 16vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.6);
   display: flex;
+  gap: 4rem;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 4rem 0;
+}
+
+.nav {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-end;
+  width: 100%;
+  flex: 1;
+  padding-left: 2rem;
+}
+
+.nav a {
+  padding: 1rem 0;
+  font-size: 1.6rem;
+  width: calc(100% - 2rem);
+  text-decoration: none;
+  color: #777;
+  position: relative;
+  z-index: 10;
+}
+
+.nav a:hover {
+  background-color: black;
+  color: #fff;
+}
+
+.nav a.active {
+  background-color: black;
+  color: #fff;
+}
+
+.log-out-btn {
+  outline: none;
+  border: none;
+  padding: 1rem 0;
+  width: calc(100% - 2rem);
+  background-image: linear-gradient(to right, rgb(99, 168, 247), rgb(2, 49, 131));
+  font-size: 1.6rem;
+  font-weight: bold;
   color: white;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.logo-container {
+  width: 10rem;
+  height: 10rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+.logo-container img {
+  width: 100px;
+  height: 100px;
+}
 
-  to {
-    transform: rotate(360deg);
-  }
+.app-social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.app-social-links * {
+  cursor: pointer;
 }
