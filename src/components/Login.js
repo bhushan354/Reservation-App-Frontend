@@ -11,9 +11,6 @@ const Login = () => {
       <div className={style.box}>
         <div className={style.container}>
           <h2 className={style.heading}>Login Form</h2>
-          <div>
-            <p className={style['color-color']}>Loading...</p>
-          </div>
           <form className={style.form}>
             <input
               type="text"
@@ -33,7 +30,7 @@ const Login = () => {
               {value}
             </button>
             <p>
-              Don`&apos;`t have an accout?
+              Do not have an accout?
               <button type="button">Sign Up</button>
             </p>
           </form>
