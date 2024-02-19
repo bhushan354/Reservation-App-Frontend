@@ -3,15 +3,20 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { HashRouter as Router } from 'react-router-dom';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { Provider } from 'react-redux';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import store from './redux/configureStore';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <App />
+      </Router>
+    </Provider>
   </React.StrictMode>,
 );
 
