@@ -13,30 +13,6 @@
     filter: blur(120px);
   }
   
-  .color-1 {
-    top: 0;
-    left: 8rem;
-    width: 100rem;
-    height: 20rem;
-    background-color: #ff359b;
-  }
-  
-  .color-2 {
-    bottom: 0;
-    right: 1rem;
-    width: 100rem;
-    height: 20rem;
-    background-color: #fffd87;
-  }
-  
-  .color-3 {
-    left: 20rem;
-    top: 15rem;
-    width: 50rem;
-    height: 40rem;
-    background-color: #00d2ff;
-  }
-  
   .box {
     position: relative;
   }
