@@ -13,7 +13,6 @@ const Vehicles = () => {
   useEffect(() => {
     dispatch(fetchItemDetail()).unwrap();
   }, []);
-  console.log(itemData.items, 'umair');
   const renderItems = () => itemData.items.map((i) => (
     <li key={i.id} className={style['vehicle-card']}>
       <div className={style.img}>
