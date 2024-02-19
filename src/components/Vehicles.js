@@ -23,9 +23,6 @@ const Vehicles = () => {
         />
       </div>
       <h3>{i.name}</h3>
-      <p className={style.dummy}>
-        aunthentic
-      </p>
       <p>
         {' '}
         {i.description}
