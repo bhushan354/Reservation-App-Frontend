@@ -5,7 +5,17 @@ import {
   FaFacebook, FaTwitter, FaLinkedin, FaGithub,
 } from 'react-icons/fa';
 
+// eslint-disable-next-line import/no-extraneous-dependencies
+import {
+  Routes, Route, NavLink,
+} from 'react-router-dom';
 import Logo from './assets/images/logo.png';
+import Vehicles from './components/Vehicles';
+import Login from './components/Login';
+import SignUp from './components/SignUp';
+// eslint-disable-next-line import/extensions
+import ReservationsList from './components/ReservationsList';
+import ReservationDetails from './components/ReservationDetails';
 
 const App = () => (
   <div className="App">
@@ -15,11 +25,11 @@ const App = () => (
           <img src={Logo} alt="brand-logo" />
         </div>
         <nav className="nav">
-          <a href="/">Vehicles</a>
-          <a href="/login">Login</a>
-          <a href="/signup">Signup</a>
+          <NavLink to="/">Vehicles</NavLink>
+          <NavLink to="/login">Login</NavLink>
+          <NavLink to="/signup">Signup</NavLink>
+          <NavLink to="/reservations">My Reservations</NavLink>
           <a href="/items/new">Add New Car</a>
-          <a href="/">My Reservations</a>
           <button type="button" className="log-out-btn">Logout</button>
         </nav>
 
@@ -32,7 +42,15 @@ const App = () => (
       </header>
 
       <div className="App-content">
-        <h1>Pages</h1>
+        <Routes>
+          <Route path="/" element={<Vehicles />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          <>
+            <Route path="/reservations" element={<ReservationsList />} />
+            <Route path="/reservations/details" element={<ReservationDetails />} />
+          </>
+        </Routes>
       </div>
     </div>
   </div>
