@@ -16,6 +16,7 @@ import SignUp from './components/SignUp';
 // eslint-disable-next-line import/extensions
 import ReservationsList from './components/ReservationsList';
 import ReservationDetails from './components/ReservationDetails';
+import AddCar from './components/AddCar';
 
 const App = () => (
   <div className="App">
@@ -29,7 +30,7 @@ const App = () => (
           <NavLink to="/login">Login</NavLink>
           <NavLink to="/signup">Signup</NavLink>
           <NavLink to="/reservations">My Reservations</NavLink>
-          <a href="/items/new">Add New Car</a>
+          <NavLink to="/addCar">Add New Car</NavLink>
           <button type="button" className="log-out-btn">Logout</button>
         </nav>
 
@@ -46,6 +47,7 @@ const App = () => (
           <Route path="/" element={<Vehicles />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/addCar" element={<AddCar />} />
           <>
             <Route path="/reservations" element={<ReservationsList />} />
             <Route path="/reservations/details" element={<ReservationDetails />} />
