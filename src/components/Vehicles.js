@@ -1,18 +1,32 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { useDispatch, useSelector } from 'react-redux';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import Carousel from 'react-elastic-carousel';
-import { fetchItemDetail } from '../redux/ItemDetail';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { Link } from 'react-router-dom';
+import { fetchItem } from '../redux/Item';
 import style from '../styles/Vehicles.module.css';
-// import { Link } from 'react-router-dom';
 
 const Vehicles = () => {
   const dispatch = useDispatch();
-  const itemData = useSelector((state) => state.itemDetail.itemDetail);
+  const itemData = useSelector((state) => state.item.item);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    dispatch(fetchItemDetail()).unwrap();
-  }, []);
+    const fetchData = async () => {
+      try {
+        await dispatch(fetchItem()).unwrap();
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        // Handle error if needed
+      }
+    };
+
+    fetchData();
+  }, [dispatch]);
+
   const renderItems = () => itemData.items.map((i) => (
     <li key={i.id} className={style['vehicle-card']}>
       <div className={style.img}>
@@ -33,7 +47,7 @@ const Vehicles = () => {
           {i.city}
         </span>
       </p>
-      {/* <Link className={style['more-btn']} to={`/item/${n.id}`}>more Details</Link> */}
+      <Link className={style['more-btn']} to={`/items/${i.id}`}>more Details</Link>
     </li>
   ));
 
@@ -47,11 +61,15 @@ const Vehicles = () => {
   return (
     <div className={style['section-vehicles']}>
       <h2 className={style['vehicle-heading']}>Cars Models</h2>
-      <ul className={style['vehicle-slider']}>
-        <Carousel breakPoints={breakPoints} focusOnSelect initialActiveIndex={1}>
-          {renderItems()}
-        </Carousel>
-      </ul>
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <ul className={style['vehicle-slider']}>
+          <Carousel breakPoints={breakPoints} focusOnSelect initialActiveIndex={1}>
+            {renderItems()}
+          </Carousel>
+        </ul>
+      )}
     </div>
   );
 };

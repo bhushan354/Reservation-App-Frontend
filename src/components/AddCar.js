@@ -5,7 +5,7 @@ import pakistanCities from '../Data/pakistanCities.json';
 const AddCar = () => (
   <div className={style['section-auth-container']}>
     <div className={style.container}>
-      <h2 className={style.heading}>Create Item</h2>
+      <h2 className={style.heading}>Create a New Car</h2>
       <form className={style['new-item-form']}>
         <div className={style['form-group']}>
           <label htmlFor="item-name" className={style['form-lable']}>

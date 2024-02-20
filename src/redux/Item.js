@@ -3,27 +3,27 @@ import axios from 'axios';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-const ITEM_DETAIL = 'ItemData/ItemData/ITEM_DETAIL';
+const ITEM = 'Item/Item/ITEM';
 const baseURL = 'http://localhost:3000/api/v1/items';
 
-export const fetchItemDetail = createAsyncThunk(
-  ITEM_DETAIL,
-  async (itemDetail, { dispatch }) => {
+export const fetchItem = createAsyncThunk(
+  ITEM,
+  async (__, { dispatch }) => {
     const response = await axios.get(baseURL);
-    dispatch({ type: ITEM_DETAIL, payload: response.data });
+    dispatch({ type: ITEM, payload: response.data });
   },
 );
 
-const initialState = { itemDetail: [] };
-const fetchItemDetailReducer = (state = initialState, action) => {
+const initialState = { item: [] };
+const fetchItemReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ITEM_DETAIL:
+    case ITEM:
       return {
         ...state,
-        itemDetail: action.payload,
+        item: action.payload,
       };
     default:
       return state;
   }
 };
-export default fetchItemDetailReducer;
+export default fetchItemReducer;

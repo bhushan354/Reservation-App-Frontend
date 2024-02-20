@@ -17,6 +17,7 @@ import SignUp from './components/SignUp';
 import ReservationsList from './components/ReservationsList';
 import ReservationDetails from './components/ReservationDetails';
 import AddCar from './components/AddCar';
+import CarDetail from './components/CarDetail';
 
 const App = () => (
   <div className="App">
@@ -48,6 +49,7 @@ const App = () => (
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/addCar" element={<AddCar />} />
+          <Route path="/items/:id" element={<CarDetail />} />
           <>
             <Route path="/reservations" element={<ReservationsList />} />
             <Route path="/reservations/details" element={<ReservationDetails />} />
