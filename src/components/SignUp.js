@@ -1,8 +1,73 @@
-import React from 'react';
+import React, { useState } from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import axios from 'axios';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { useNavigate } from 'react-router';
 import style from '../styles/Auth.module.css';
 
 const SignUp = () => {
-  const value = 'go';
+  const navigate = useNavigate();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [error, setError] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      setError('');
+
+      if (password.trim() === '') {
+        setError("Password can't be blank");
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        setError('Passwords do not match');
+        return;
+      }
+
+      const dataToSend = {
+        user: {
+          name,
+          email,
+          password,
+        },
+      };
+
+      // eslint-disable-next-line no-unused-vars
+      const response = await axios.post(
+        'http://localhost:3000//api/v1/users',
+        dataToSend,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        },
+      );
+
+      navigate('/');
+
+      setName('');
+      setEmail('');
+      setPassword('');
+      setConfirmPassword('');
+      setError('');
+    } catch (error) {
+      if (
+        error.response
+        && error.response.data
+        && error.response.data.message[0]
+      ) {
+        setError(error.response.data.message[0]);
+      } else {
+        setError('An error occurred');
+      }
+    }
+  };
+
   return (
     <div className={style['section-auth-container']}>
       <div className={`${style.color} ${style['color-1']}`} />
@@ -17,25 +82,39 @@ const SignUp = () => {
               <p className={style['loading-message']}>Loading...</p>
             </div>
           </div>
-          <form className={style.form}>
+          <form className={style.form} onSubmit={handleSubmit}>
             <input
               type="text"
               name="username"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               placeholder="Username"
             />
             <input
               type="password"
               name="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
             />
+            {error && <div className="text-red-500">{error}</div>}
             <input
               type="password"
               name="passwordConfirmation"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
               placeholder="Confirm Password"
             />
             <input type="text" name="firstName" placeholder="First Name" />
             <input type="text" name="lastName" placeholder="Last Name" />
-            <input type="email" name="email" placeholder="Email" />
+            <input
+              type="email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email"
+            />
+            {error && <div className="text-red-500">{error}</div>}
             <select name="city">
               <option value="">Select Continent</option>
               <option value="Asia">Asia</option>
@@ -49,8 +128,6 @@ const SignUp = () => {
               Already have an account?
               <button type="button">
                 Log In
-                {' '}
-                {value}
               </button>
             </p>
           </form>

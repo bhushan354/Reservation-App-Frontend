@@ -109,7 +109,6 @@ const CarDetail = () => {
           <input
             type="date"
           />
-          {/* {validationMessage && <p style={{ color: 'red' }}>{validationMessage}</p>} */}
           <button type="submit">Reserve</button>
         </form>
         <button className={style['cancel-reservation']} type="button">
