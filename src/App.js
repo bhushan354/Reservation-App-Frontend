@@ -30,6 +30,9 @@ const App = () => {
     try {
       await dispatch(logout());
       setLogoutMessage('Logout successful');
+      setTimeout(() => {
+        setLogoutMessage('');
+      }, 3000);
       navigate('/');
     } catch (error) {
       setLogoutMessage('Logout failed');
