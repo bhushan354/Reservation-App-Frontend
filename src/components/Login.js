@@ -1,91 +1,97 @@
-// import React from 'react';
-// import style from '../styles/Auth.module.css';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router';
+import { useDispatch } from 'react-redux';
+import style from '../styles/Auth.module.css';
+import { loginFailure, loginSuccess } from '../redux/Auth';
 
-// const Login = () => {
+const Login = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [email, setEmail] = useState('');
+  const [passworD, setPassword] = useState('');
+  const [error, setError] = useState('');
 
-//   const navigate = useNavigate();
-//   const dispatch = useDispatch();
-//   const [email, setEmail] = useState('');
-//   const [password, setPassword] = useState('');
-//   const [error, setError] = useState('');
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      if (!email || !passworD) {
+        setError('Email and password are required');
+        return;
+      }
 
-//   const handleLogin = async (e) => {
-//     e.preventDefault();
-//     try {
-//             if (!email || !password) {
-//         setError('Email and password are required');
-//         return;
-//       }
-//       const response = await fetch('http://localhost:4000/login', {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify({
-//           user: {
-//             email,
-//             password,
-//           },
-//         }),
-//       });
-//       const responseJson = await response.json();
-//       const { status } = responseJson;
-//       if (status.code === 200) {
-//         const tokenHeader = response.headers.get('Authorization');
-//         const token = tokenHeader ? tokenHeader.split(' ')[1] : null;
-//         if (token) {
-//           const { data } = responseJson;
-//           const { id, email } = data;
-//           dispatch(loginSuccess({ user: { id, email }, token }));
-//           navigate('/homepage');
-//         } else {
-//           dispatch(loginFailure());
-//           setError('Login failed');
-//         }
-//       }
-//     } catch (error) {
-//       console.error('Error parsing JSON:', error);
-//       dispatch(loginFailure());
-//       setError('An error occurred');
-//     }
-//   };
+      const response = await fetch('http://localhost:3000/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          user: {
+            login: email,
+            password: passworD,
+          },
+        }),
+      });
+      console.log(response, 'umair');
+      const responseJson = await response.json();
+      const { status } = responseJson;
+      console.log(responseJson, 'zain');
 
-//   return (
-//     <div className={style['section-auth-container']}>
-//       <div className={`${style.color} ${style['color-1']}`} />
-//       <div className={`${style.color} ${style['color-2']}`} />
-//       <div className={`${style.color} ${style['color-3']}`} />
-//       <div className={style.box}>
-//         <div className={style.container}>
-//           <h2 className={style.heading}>Login Form</h2>
-//           <form className={style.form}>
-//             <input
-//               type="text"
-//               name="login"
-//               placeholder="Username or Email"
-//             />
-//             <div className={style['input-container']}>
-//               <input
-//                 type="password"
-//                 name="password"
-//                 placeholder="Password"
-//               />
-//             </div>
-//             <button type="submit" className={style['submit-btn']}>
-//               Log In
-//               {' '}
-//               {value}
-//             </button>
-//             <p>
-//               Do not have an accout?
-//               <button type="button">Sign Up</button>
-//             </p>
-//           </form>
-//         </div>
-//       </div>
-//     </div>
+      if (status && status.code === 200) {
+        const { data } = responseJson;
+        const { id, email } = data;
+        dispatch(loginSuccess({ user: { id, email } }));
+        navigate('/');
+        alert('Successfully Logged in');
+      } else {
+        dispatch(loginFailure());
+        setError('Login failed');
+      }
+    } catch (error) {
+      console.error('Error parsing JSON:', error);
+      dispatch(loginFailure());
+      setError('An error occurred');
+    }
+  };
 
-//   );
-// };
+  return (
+    <div className={style['section-auth-container']}>
+      <div className={`${style.color} ${style['color-1']}`} />
+      <div className={`${style.color} ${style['color-2']}`} />
+      <div className={`${style.color} ${style['color-3']}`} />
+      <div className={style.box}>
+        <div className={style.container}>
+          <h2 className={style.heading}>Login Form</h2>
+          <form className={style.form} onSubmit={handleLogin}>
+            <input
+              type="text"
+              name="login"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Username or Email"
+            />
+            <div className={style['input-container']}>
+              <input
+                type="password"
+                name="password"
+                value={passworD}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Password"
+              />
+            </div>
+            {error && <div className="text-red-500">{error}</div>}
+            <button type="submit" className={style['submit-btn']}>
+              Log In
+            </button>
+            <p>
+              Do not have an accout?
+              <button type="button">Sign Up</button>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
 
-// export default Login;
+  );
+};
+
+export default Login;
