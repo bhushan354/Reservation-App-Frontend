@@ -7,11 +7,18 @@ import style from '../styles/Auth.module.css';
 
 const SignUp = () => {
   const navigate = useNavigate();
-  const [name, setName] = useState('');
+  const [username, setuserName] = useState('');
+  const [firstName, setfirstName] = useState('');
+  const [lastName, setlastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [city, setcity] = useState('');
   const [error, setError] = useState('');
+
+  const handleCityChange = (e) => {
+    setcity(e.target.value);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,15 +38,20 @@ const SignUp = () => {
 
       const dataToSend = {
         user: {
-          name,
+          username,
+          firstName,
+          lastName,
           email,
           password,
+          confirmPassword,
+          city,
         },
       };
+      console.log(dataToSend, 'umair');
 
       // eslint-disable-next-line no-unused-vars
       const response = await axios.post(
-        'http://localhost:3000//api/v1/users',
+        'http://localhost:3000/signup',
         dataToSend,
         {
           headers: {
@@ -50,10 +62,13 @@ const SignUp = () => {
 
       navigate('/');
 
-      setName('');
+      setuserName('');
+      setfirstName('');
+      setlastName('');
       setEmail('');
       setPassword('');
       setConfirmPassword('');
+      setcity('');
       setError('');
     } catch (error) {
       if (
@@ -86,9 +101,18 @@ const SignUp = () => {
             <input
               type="text"
               name="username"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              value={username}
+              onChange={(e) => setuserName(e.target.value)}
               placeholder="Username"
+            />
+            <input type="text" name="firstName" value={firstName} onChange={(e) => setfirstName(e.target.value)} placeholder="First Name" />
+            <input type="text" name="lastName" value={lastName} onChange={(e) => setlastName(e.target.value)} placeholder="Last Name" />
+            <input
+              type="email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email"
             />
             <input
               type="password"
@@ -105,17 +129,8 @@ const SignUp = () => {
               onChange={(e) => setConfirmPassword(e.target.value)}
               placeholder="Confirm Password"
             />
-            <input type="text" name="firstName" placeholder="First Name" />
-            <input type="text" name="lastName" placeholder="Last Name" />
-            <input
-              type="email"
-              name="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Email"
-            />
             {error && <div className="text-red-500">{error}</div>}
-            <select name="city">
+            <select name="city" value={city} onChange={handleCityChange}>
               <option value="">Select Continent</option>
               <option value="Asia">Asia</option>
               <option value="Africa">Africa</option>
