@@ -12,6 +12,15 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
+            if (!email || !password) {
+        setError('Email and password are required');
+        return;
+      }
+      const response = await fetch('http://localhost:4000/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
 
   return (
     <div className={style['section-auth-container']}>
