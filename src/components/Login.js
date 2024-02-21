@@ -21,6 +21,34 @@ const Login = () => {
         headers: {
           'Content-Type': 'application/json',
         },
+        body: JSON.stringify({
+          user: {
+            email,
+            password,
+          },
+        }),
+      });
+      const responseJson = await response.json();
+      const { status } = responseJson;
+      if (status.code === 200) {
+        const tokenHeader = response.headers.get('Authorization');
+        const token = tokenHeader ? tokenHeader.split(' ')[1] : null;
+        if (token) {
+          const { data } = responseJson;
+          const { id, email } = data;
+          dispatch(loginSuccess({ user: { id, email }, token }));
+          navigate('/homepage');
+        } else {
+          dispatch(loginFailure());
+          setError('Login failed');
+        }
+      }
+    } catch (error) {
+      console.error('Error parsing JSON:', error);
+      dispatch(loginFailure());
+      setError('An error occurred');
+    }
+  };
 
   return (
     <div className={style['section-auth-container']}>
