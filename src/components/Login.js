@@ -2,7 +2,15 @@ import React from 'react';
 import style from '../styles/Auth.module.css';
 
 const Login = () => {
-  const value = 'go';
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+
+
   return (
     <div className={style['section-auth-container']}>
       <div className={`${style.color} ${style['color-1']}`} />
