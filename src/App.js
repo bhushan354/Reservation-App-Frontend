@@ -17,7 +17,7 @@ import SignUp from './components/SignUp';
 // eslint-disable-next-line import/extensions
 import ReservationsList from './components/ReservationsList';
 import ReservationDetails from './components/ReservationDetails';
-import AddCar from './components/AddCar';
+import AddVehicle from './components/AddVehicle';
 import CarDetail from './components/CarDetail';
 import { logout } from './redux/Auth';
 
@@ -56,7 +56,7 @@ const App = () => {
               </>
             )}
             <NavLink to="/reservations">My Reservations</NavLink>
-            <NavLink to="/addCar">Add New Car</NavLink>
+            <NavLink to="/addVehicle">Add New Vehicle</NavLink>
             {user.isAuthenticated ? (
               <button onClick={handleLogout} type="button" className="log-out-btn">
                 Logout
@@ -78,7 +78,7 @@ const App = () => {
             <Route path="/" element={<Vehicles />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
-            <Route path="/addCar" element={<AddCar />} />
+            <Route path="/addVehicle" element={<AddVehicle />} />
             <Route path="/items/:id" element={<CarDetail />} />
             <>
               <Route path="/reservations" element={<ReservationsList />} />

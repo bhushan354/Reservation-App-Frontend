@@ -28,7 +28,7 @@ const SignUp = () => {
     try {
       setError('');
 
-      if (!isAlpha(firstName) || !isAlpha(lastName) || !isAlpha(username)) {
+      if (!isAlpha(firstName) || !isAlpha(lastName)) {
         setError(
           'First Name, Last Name, and Username should contain only letters (no spaces/numbers).',
         );
