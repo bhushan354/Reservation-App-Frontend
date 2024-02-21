@@ -49,8 +49,12 @@ const App = () => {
           </div>
           <nav className="nav">
             <NavLink to="/">Vehicles</NavLink>
-            <NavLink to="/login">Login</NavLink>
-            <NavLink to="/signup">Signup</NavLink>
+            {user.isAuthenticated ? null : (
+              <>
+                <NavLink to="/login">Login</NavLink>
+                <NavLink to="/signup">Signup</NavLink>
+              </>
+            )}
             <NavLink to="/reservations">My Reservations</NavLink>
             <NavLink to="/addCar">Add New Car</NavLink>
             {user.isAuthenticated ? (

@@ -64,7 +64,7 @@ const SignUp = () => {
 
       // eslint-disable-next-line no-unused-vars
       const response = await axios.post(
-        'http://localhost:3000/login',
+        'http://localhost:3000/signup',
         dataToSend,
         {
           headers: {
@@ -73,27 +73,30 @@ const SignUp = () => {
         },
       );
 
-      navigate('/');
-
-      setuserName('');
-      setfirstName('');
-      setlastName('');
-      setEmail('');
-      setPassword('');
-      setConfirmPassword('');
-      setcity('');
-      setError('');
-      // eslint-disable-next-line no-alert
-      alert(
-        'The user signed up successfully. Now please login from the login page.',
-      );
+      if (response.status === 200) {
+        // Successful signup
+        navigate('/');
+        setuserName('');
+        setfirstName('');
+        setlastName('');
+        setEmail('');
+        setPassword('');
+        setConfirmPassword('');
+        setcity('');
+        setError('');
+        alert('The user signed up successfully. Now please login from the login page.');
+      } else {
+        const errorMessage = response.data.status.message;
+        setError(errorMessage);
+      }
     } catch (error) {
       if (
         error.response
         && error.response.data
-        && error.response.data.message[0]
+        && error.response.data.status
+        && error.response.data.status.message
       ) {
-        setError(error.response.data.message[0]);
+        setError(error.response.data.status.message);
       } else {
         setError('An error occurred');
       }
