@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
 import axios from 'axios';
 import style from '../styles/Auth.module.css';
-import pakistanCities from '../Data/pakistanCities.json';
 
 const AddVehicle = () => {
   const navigate = useNavigate();
@@ -14,7 +13,11 @@ const AddVehicle = () => {
   const [totalAmount, setTotalAmount] = useState('');
   const [duration, setDuration] = useState('');
   const [apr, setApr] = useState('');
+  const [city, setcity] = useState('');
   const [error, setError] = useState('');
+
+  const admin = 1;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -23,6 +26,7 @@ const AddVehicle = () => {
         return;
       }
       const dataToSend = {
+        admin,
         name,
         description,
         image,
@@ -31,10 +35,11 @@ const AddVehicle = () => {
         totalAmount,
         duration,
         apr,
+        city,
       };
       // eslint-disable-next-line no-unused-vars
       const response = await axios.post(
-        'http://127.0.0.1:4000/api/v1/items',
+        'http://127.0.0.1:3000/api/v1/items',
         dataToSend,
         {
           headers: {
@@ -42,7 +47,9 @@ const AddVehicle = () => {
           },
         },
       );
-      navigate('/homepage');
+      console.log(response, 'car');
+
+      // Reset form fields first
       setName('');
       setDescription('');
       setImage('');
@@ -51,11 +58,24 @@ const AddVehicle = () => {
       setTotalAmount('');
       setDuration('');
       setApr('');
+      setcity('');
+
+      if (response.data.success) {
+        // If success is true, display success alert
+        alert('Vehicle Added successfully.');
+        navigate('/');
+      } else if (response.data.message && response.data.message.length > 0) {
+        // If success is false and there is an error message, display error message
+        setError(response.data.message[0]);
+      } else {
+        setError('An error occurred');
+      }
     } catch (error) {
       if (
         error.response
-        && error.response.data
-        && error.response.data.message[0]
+   && error.response.data
+   && error.response.data.message
+   && error.response.data.message.length > 0
       ) {
         setError(error.response.data.message[0]);
       } else {
@@ -164,14 +184,14 @@ const AddVehicle = () => {
           <div className={style['form-group']}>
             <label htmlFor="item-city" className={style['form-lable']}>
               <span className={style['select-span']}>City:</span>
-              <select id="item-city" required>
-                <option value="">Select a city of Pakistan</option>
-                {pakistanCities.map((city) => (
-                  <option key={city} value={city}>
-                    {city}
-                  </option>
-                ))}
-              </select>
+              <input
+                id="item-city"
+                type="text"
+                value={city}
+                onChange={(e) => setcity(e.target.value)}
+                placeholder="City"
+                required
+              />
             </label>
           </div>
           <div className={style['form-group']}>
