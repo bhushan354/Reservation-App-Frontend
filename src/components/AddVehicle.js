@@ -16,7 +16,9 @@ const AddVehicle = () => {
   const [city, setcity] = useState('');
   const [error, setError] = useState('');
 
-  const admin = 1;
+  // Hard Coded Admin Value
+  // eslint-disable-next-line camelcase
+  const admin_id = 1;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,7 +28,7 @@ const AddVehicle = () => {
         return;
       }
       const dataToSend = {
-        admin,
+        admin_id,
         name,
         description,
         image,
