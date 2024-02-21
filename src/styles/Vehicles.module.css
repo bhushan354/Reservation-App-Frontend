@@ -17,6 +17,24 @@
     font-weight: bold;
   }
   
+  .welcome {
+    color: #333;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 3rem 0 3rem 0;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .title-heading {
+    color: #333;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 3rem 0 3rem 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
   .vehicle-card {
     background-color: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(5px);
