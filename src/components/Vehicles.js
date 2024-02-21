@@ -12,6 +12,7 @@ const Vehicles = () => {
   const dispatch = useDispatch();
   const itemData = useSelector((state) => state.item.item);
   const [loading, setLoading] = useState(true);
+  const user = useSelector((state) => state.auth);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -61,6 +62,16 @@ const Vehicles = () => {
   return (
     <div className={style['section-vehicles']}>
       <h2 className={style['vehicle-heading']}>Cars Models</h2>
+      {user.isAuthenticated ? (
+        <>
+          <h4 className={style.welcome}>Welcome</h4>
+          <h6 className={style['title-heading']}>
+            {user.user.firstName}
+            {' '}
+            {user.user.lastName}
+          </h6>
+        </>
+      ) : <p className={style['title-heading']}>Please Login</p>}
       {loading ? (
         <p>Loading...</p>
       ) : (

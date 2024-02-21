@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { toast } from 'react-toastify';
 
 const initialState = {
   user: null,
@@ -15,7 +14,6 @@ const authSlice = createSlice({
     loginSuccess: (state, action) => {
       const { user } = action.payload;
       sessionStorage.setItem('user', JSON.stringify(user));
-      toast.success(`Successful login. Welcome, ${user.name}`);
       return {
         ...state,
         user,

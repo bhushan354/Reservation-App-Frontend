@@ -38,13 +38,15 @@ const Login = () => {
 
       if (status && status.code === 200) {
         const { data } = responseJson;
-        const { id, email } = data;
-        dispatch(loginSuccess({ user: { id, email } }));
+        const { firstName, lastName, email } = data;
+        dispatch(loginSuccess({ user: { firstName, lastName, email } }));
         navigate('/');
         alert('Successfully Logged in');
       } else {
         dispatch(loginFailure());
-        setError('Login failed');
+        setTimeout(() => {
+          setError('Login failed. Please enter correct email and password');
+        }, 1000);
       }
     } catch (error) {
       console.error('Error parsing JSON:', error);
@@ -78,7 +80,7 @@ const Login = () => {
                 placeholder="Password"
               />
             </div>
-            {error && <div className="text-red-500">{error}</div>}
+            {error && <div className={style['error-msg']}>{error}</div>}
             <button type="submit" className={style['submit-btn']}>
               Log In
             </button>

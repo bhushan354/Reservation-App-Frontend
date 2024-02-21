@@ -9,7 +9,7 @@ import {
 import {
   Routes, Route, NavLink, useNavigate,
 } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Logo from './assets/images/logo.png';
 import Vehicles from './components/Vehicles';
 import Login from './components/Login';
@@ -25,6 +25,7 @@ const App = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [logoutMessage, setLogoutMessage] = useState('');
+  const user = useSelector((state) => state.auth);
 
   const handleLogout = async () => {
     try {
@@ -32,7 +33,7 @@ const App = () => {
       setLogoutMessage('Logout successful');
       setTimeout(() => {
         setLogoutMessage('');
-      }, 3000);
+      }, 1000);
       navigate('/');
     } catch (error) {
       setLogoutMessage('Logout failed');
@@ -52,7 +53,11 @@ const App = () => {
             <NavLink to="/signup">Signup</NavLink>
             <NavLink to="/reservations">My Reservations</NavLink>
             <NavLink to="/addCar">Add New Car</NavLink>
-            <button onClick={handleLogout} type="button" className="log-out-btn">Logout</button>
+            {user.isAuthenticated ? (
+              <button onClick={handleLogout} type="button" className="log-out-btn">
+                Logout
+              </button>
+            ) : null}
             {logoutMessage && <p>{logoutMessage}</p>}
           </nav>
 
