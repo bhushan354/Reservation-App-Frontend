@@ -20,14 +20,28 @@ const SignUp = () => {
     setcity(e.target.value);
   };
 
+  const isAlpha = (str) => /^[A-Za-z]+$/.test(str);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
       setError('');
 
+      if (!isAlpha(firstName) || !isAlpha(lastName) || !isAlpha(username)) {
+        setError(
+          'First Name, Last Name, and Username should contain only letters (no spaces/numbers).',
+        );
+        return;
+      }
+
       if (password.trim() === '') {
         setError("Password can't be blank");
+        return;
+      }
+
+      if (password.length < 6) {
+        setError('Password is too short (minimum is 6 characters)');
         return;
       }
 
@@ -47,7 +61,6 @@ const SignUp = () => {
           city,
         },
       };
-      console.log(dataToSend, 'umair');
 
       // eslint-disable-next-line no-unused-vars
       const response = await axios.post(
@@ -70,6 +83,10 @@ const SignUp = () => {
       setConfirmPassword('');
       setcity('');
       setError('');
+      // eslint-disable-next-line no-alert
+      alert(
+        'The user signed up successfully. Now please login from the login page.',
+      );
     } catch (error) {
       if (
         error.response
@@ -104,15 +121,31 @@ const SignUp = () => {
               value={username}
               onChange={(e) => setuserName(e.target.value)}
               placeholder="Username"
+              required
             />
-            <input type="text" name="firstName" value={firstName} onChange={(e) => setfirstName(e.target.value)} placeholder="First Name" />
-            <input type="text" name="lastName" value={lastName} onChange={(e) => setlastName(e.target.value)} placeholder="Last Name" />
+            <input
+              type="text"
+              name="firstName"
+              value={firstName}
+              onChange={(e) => setfirstName(e.target.value)}
+              placeholder="First Name"
+              required
+            />
+            <input
+              type="text"
+              name="lastName"
+              value={lastName}
+              onChange={(e) => setlastName(e.target.value)}
+              placeholder="Last Name"
+              required
+            />
             <input
               type="email"
               name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Email"
+              required
             />
             <input
               type="password"
@@ -120,30 +153,32 @@ const SignUp = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
+              required
             />
-            {error && <div className="text-red-500">{error}</div>}
+            {error && <div className={style['error-msg']}>{error}</div>}
             <input
               type="password"
               name="passwordConfirmation"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               placeholder="Confirm Password"
+              required
             />
-            {error && <div className="text-red-500">{error}</div>}
+            {error && <div className={style['error-msg']}>{error}</div>}
             <select name="city" value={city} onChange={handleCityChange}>
               <option value="">Select Continent</option>
               <option value="Asia">Asia</option>
               <option value="Africa">Africa</option>
               <option value="North America">North America</option>
               <option value="South America">South America</option>
-              <option value="Eurpoe">Eurpoe</option>
+              <option value="Europe">Europe</option>
             </select>
-            <button type="submit" className={style['submit-btn']}>Register</button>
+            <button type="submit" className={style['submit-btn']}>
+              Register
+            </button>
             <p>
               Already have an account?
-              <button type="button">
-                Log In
-              </button>
+              <button type="button">Log In</button>
             </p>
           </form>
         </div>

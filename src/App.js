@@ -11,7 +11,7 @@ import {
 } from 'react-router-dom';
 import Logo from './assets/images/logo.png';
 import Vehicles from './components/Vehicles';
-import Login from './components/Login';
+// import Login from './components/Login';
 import SignUp from './components/SignUp';
 // eslint-disable-next-line import/extensions
 import ReservationsList from './components/ReservationsList';
@@ -28,7 +28,7 @@ const App = () => (
         </div>
         <nav className="nav">
           <NavLink to="/">Vehicles</NavLink>
-          <NavLink to="/login">Login</NavLink>
+          {/* <NavLink to="/login">Login</NavLink> */}
           <NavLink to="/signup">Signup</NavLink>
           <NavLink to="/reservations">My Reservations</NavLink>
           <NavLink to="/addCar">Add New Car</NavLink>
@@ -46,7 +46,7 @@ const App = () => (
       <div className="App-content">
         <Routes>
           <Route path="/" element={<Vehicles />} />
-          <Route path="/login" element={<Login />} />
+          {/* <Route path="/login" element={<Login />} /> */}
           <Route path="/signup" element={<SignUp />} />
           <Route path="/addCar" element={<AddCar />} />
           <Route path="/items/:id" element={<CarDetail />} />
