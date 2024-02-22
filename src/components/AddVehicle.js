@@ -18,7 +18,7 @@ const AddVehicle = () => {
 
   // Hard Coded Admin Value
   // eslint-disable-next-line camelcase
-  const admin_id = 1;
+  const adminId = 1;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,7 +28,7 @@ const AddVehicle = () => {
         return;
       }
       const dataToSend = {
-        admin_id,
+        adminId,
         name,
         description,
         image,

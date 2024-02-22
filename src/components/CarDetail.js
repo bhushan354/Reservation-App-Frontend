@@ -55,7 +55,7 @@ const CarDetail = () => {
               Finance Fee:
             </span>
             <span>
-              {itemDetailsData.finance_fee}
+              {itemDetailsData.financeFee}
             </span>
           </p>
           <p className={style['dark-bg']}>
@@ -63,7 +63,7 @@ const CarDetail = () => {
               Purchase Fee:
             </span>
             <span>
-              {itemDetailsData.option_to_purchase_fee}
+              {itemDetailsData.purchaseFee}
             </span>
           </p>
           <p>
@@ -71,7 +71,7 @@ const CarDetail = () => {
               Total Payable:
             </span>
             <span>
-              {itemDetailsData.total_amount_payable}
+              {itemDetailsData.totalAmount}
             </span>
           </p>
           <p className={style['dark-bg']}>
@@ -87,7 +87,7 @@ const CarDetail = () => {
               APR Representative:
             </span>
             <span>
-              {itemDetailsData.apr_representative}
+              {itemDetailsData.apr}
             </span>
           </p>
         </div>
