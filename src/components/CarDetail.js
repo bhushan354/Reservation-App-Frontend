@@ -109,7 +109,7 @@ const CarDetail = () => {
           <input
             type="date"
           />
-          <button type="submit">Reserve</button>
+          <button type="button">Reserve</button>
         </form>
         <button className={style['cancel-reservation']} type="button">
           Cancel Reservation

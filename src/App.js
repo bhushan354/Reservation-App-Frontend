@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import {
   FaFacebook, FaTwitter, FaLinkedin, FaGithub,
 } from 'react-icons/fa';
-
-// eslint-disable-next-line import/no-extraneous-dependencies
 import {
   Routes, Route, NavLink, useNavigate,
 } from 'react-router-dom';
@@ -14,12 +11,11 @@ import Logo from './assets/images/logo.png';
 import Vehicles from './components/Vehicles';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
-// eslint-disable-next-line import/extensions
-import ReservationsList from './components/ReservationsList';
-import ReservationDetails from './components/ReservationDetails';
 import AddVehicle from './components/AddVehicle';
 import CarDetail from './components/CarDetail';
 import { logout } from './redux/Auth';
+import ReservationsList from './components/ReservationsList';
+import ReservationDetails from './components/ReservationDetails';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -55,13 +51,15 @@ const App = () => {
                 <NavLink to="/signup">Signup</NavLink>
               </>
             )}
-            <NavLink to="/reservations">My Reservations</NavLink>
-            <NavLink to="/addVehicle">Add New Vehicle</NavLink>
-            {user.isAuthenticated ? (
-              <button onClick={handleLogout} type="button" className="log-out-btn">
-                Logout
-              </button>
-            ) : null}
+            {user.isAuthenticated && (
+              <>
+                <NavLink to="/reservations">My Reservations</NavLink>
+                <NavLink to="/addVehicle">Add New Vehicle</NavLink>
+                <button onClick={handleLogout} type="button" className="log-out-btn">
+                  Logout
+                </button>
+              </>
+            )}
             {logoutMessage && <p>{logoutMessage}</p>}
           </nav>
 
@@ -80,10 +78,12 @@ const App = () => {
             <Route path="/signup" element={<SignUp />} />
             <Route path="/addVehicle" element={<AddVehicle />} />
             <Route path="/items/:id" element={<CarDetail />} />
-            <>
-              <Route path="/reservations" element={<ReservationsList />} />
-              <Route path="/reservations/details" element={<ReservationDetails />} />
-            </>
+            {user.isAuthenticated && (
+              <>
+                <Route path="/reservations" element={<ReservationsList />} />
+                <Route path="/reservations/details" element={<ReservationDetails />} />
+              </>
+            )}
           </Routes>
         </div>
       </div>
