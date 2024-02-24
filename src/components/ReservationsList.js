@@ -31,7 +31,6 @@ const ReservationsList = () => {
             City:
             {reservation.city}
           </p>
-          {/* Add more reservation details as needed */}
           <hr />
         </div>
       ))}
