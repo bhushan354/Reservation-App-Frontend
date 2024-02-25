@@ -17,7 +17,7 @@ import { logout } from './redux/Auth';
 import ReservationsList from './components/ReservationsList';
 import ReservationDetails from './components/ReservationDetails';
 
-const App = () => {
+function App() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [logoutMessage, setLogoutMessage] = useState('');
@@ -89,6 +89,6 @@ const App = () => {
       </div>
     </div>
   );
-};
+}
 
 export default App;

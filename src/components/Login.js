@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import style from '../styles/Auth.module.css';
 import { loginFailure, loginSuccess } from '../redux/Auth';
 
-const Login = () => {
+function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
@@ -94,6 +94,6 @@ const Login = () => {
     </div>
 
   );
-};
+}
 
 export default Login;

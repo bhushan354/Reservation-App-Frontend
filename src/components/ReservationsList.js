@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchReservations, selectAllReservations } from '../redux/reservationsSlice';
 
-const ReservationsList = () => {
+function ReservationsList() {
   const dispatch = useDispatch();
   const reservations = useSelector(selectAllReservations);
 
@@ -36,6 +36,6 @@ const ReservationsList = () => {
       ))}
     </div>
   );
-};
+}
 
 export default ReservationsList;

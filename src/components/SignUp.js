@@ -5,7 +5,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router';
 import style from '../styles/Auth.module.css';
 
-const SignUp = () => {
+function SignUp() {
   const navigate = useNavigate();
   const [username, setuserName] = useState('');
   const [firstName, setfirstName] = useState('');
@@ -188,6 +188,6 @@ const SignUp = () => {
       </div>
     </div>
   );
-};
+}
 
 export default SignUp;

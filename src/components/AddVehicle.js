@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router';
 import axios from 'axios';
 import style from '../styles/Auth.module.css';
 
-const AddVehicle = () => {
+function AddVehicle() {
   const navigate = useNavigate();
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
@@ -216,6 +216,6 @@ const AddVehicle = () => {
       </div>
     </div>
   );
-};
+}
 
 export default AddVehicle;

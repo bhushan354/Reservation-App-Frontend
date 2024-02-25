@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ReservationDetails = () => {
+function ReservationDetails() {
   const value = 'go';
   return (
     <div>
@@ -8,6 +8,6 @@ const ReservationDetails = () => {
       {value}
     </div>
   );
-};
+}
 
 export default ReservationDetails;

@@ -7,7 +7,7 @@ import { fetchDetailItem } from '../redux/ItemDeatils';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import style from '../styles/Vehicles.module.css';
 
-const CarDetail = () => {
+function CarDetail() {
   const { id } = useParams();
   //   const [reserveDate, setReserveDate] = useState('');
   const dispatch = useDispatch();
@@ -120,6 +120,6 @@ const CarDetail = () => {
       </div>
     </div>
   );
-};
+}
 
 export default CarDetail;
