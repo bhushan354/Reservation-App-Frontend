@@ -17,6 +17,14 @@ export const deleteReservation = createAsyncThunk(
   },
 );
 
+export const reserveItem = createAsyncThunk(
+  'reservations/reserveItem',
+  async (itemId) => {
+    const response = await axios.post('http://localhost:3000/api/v1/reservations', { itemId });
+    return response.data;
+  },
+);
+
 const reservationsSlice = createSlice({
   name: 'reservations',
   initialState: {
@@ -50,6 +58,16 @@ const reservationsSlice = createSlice({
         ));
       })
       .addCase(deleteReservation.rejected, (state) => {
+        state.status = 'rejected';
+      })
+      .addCase(reserveItem.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(reserveItem.fulfilled, (state, action) => {
+        state.status = 'fulfilled';
+        state.reservations.push(action.payload);
+      })
+      .addCase(reserveItem.rejected, (state) => {
         state.status = 'rejected';
       });
   },
