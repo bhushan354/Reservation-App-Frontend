@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Carousel from 'react-elastic-carousel';
-import { Link } from 'react-router-dom';
-import { fetchReservations, selectAllReservations } from '../redux/reservationsSlice';
+import { fetchReservations, selectAllReservations, deleteReservation } from '../redux/reservationsSlice';
 import style from '../styles/Vehicles.module.css';
 
 function ReservationsList() {
@@ -12,6 +11,10 @@ function ReservationsList() {
   useEffect(() => {
     dispatch(fetchReservations());
   }, [dispatch]);
+
+  const handleDeleteReservation = (id) => {
+    dispatch(deleteReservation(id));
+  };
 
   const renderReservations = () => (
     reservations.map((reservation) => (
@@ -23,6 +26,14 @@ function ReservationsList() {
           />
         </div>
         <p>
+          Name :
+          {reservation.name}
+        </p>
+        <p>
+          Description :
+          {reservation.description}
+        </p>
+        <p>
           Reserved for date :
           {reservation.reserve_for_use_date}
         </p>
@@ -33,7 +44,7 @@ function ReservationsList() {
             {reservation.city}
           </span>
         </p>
-        <Link className={style['more-btn']} to={`/items/${reservation.id}`}>more Details</Link>
+        <button type="button" className={style['delete-button']} onClick={() => handleDeleteReservation(reservation.id)}>Delete Reservation</button>
       </li>
     ))
   );
