@@ -47,7 +47,7 @@
 
 .vehicle-card .img {
   height: 200px;
-  width: 285px;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -109,8 +109,7 @@
 }
 
 .back-btn button {
-  padding: 1rem 1rem 1rem 2rem;
-  border-radius: 0 5rem 5rem 0;
+  padding: 1rem 1rem 1rem 1rem;
 }
 
 .details-img {
@@ -119,8 +118,8 @@
 }
 
 .details-img img {
-  width: 600px;
-  height: 400px;
+  width: 40vw;
+  height: 40vh;
   object-fit: cover;
 }
 

@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import './App.css';
 import {
   FaFacebook, FaTwitter, FaLinkedin, FaGithub,
+  FaBars,
+  FaArrowLeft,
+  FaTimes,
 } from 'react-icons/fa';
 import {
   Routes, Route, NavLink, useNavigate,
@@ -14,14 +17,31 @@ import SignUp from './components/SignUp';
 import AddVehicle from './components/AddVehicle';
 import CarDetail from './components/CarDetail';
 import { logout } from './redux/Auth';
+import style from './styles/Vehicles.module.css';
 import ReservationsList from './components/ReservationsList';
 import ReservationDetails from './components/ReservationDetails';
 
-const App = () => {
+function App() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [logoutMessage, setLogoutMessage] = useState('');
   const user = useSelector((state) => state.auth);
+  const [showHeader, setShowHeader] = useState(false);
+  const [showContent, setShowContent] = useState(false);
+
+  const toggleHeader = () => {
+    setShowHeader(!showHeader);
+    setShowContent(false);
+    if (showHeader) {
+      document.body.style.overflow = 'auto';
+    } else {
+      document.body.style.overflow = 'hidden';
+    }
+  };
+
+  const closeHeader = () => {
+    setShowHeader(false);
+  };
 
   const handleLogout = async () => {
     try {
@@ -36,28 +56,47 @@ const App = () => {
     }
   };
 
+  const handleBackToVehicles = () => {
+    navigate('/');
+  };
+
   return (
     <div className="App">
       <div className="app-container">
-        <header className="App-header">
+        <div className={style['back-btn']}>
+          <button type="button" className="mob-btn" onClick={handleBackToVehicles}>
+            <FaArrowLeft size={24} />
+            {' '}
+          </button>
+          <button type="button" className="mob-btn" onClick={toggleHeader}>
+            <FaBars size={24} color="black" />
+            {' '}
+          </button>
+        </div>
+        <div className={`App-header ${showHeader ? 'flex' : ''}`}>
+          <button type="button" className="mob-btn" onClick={toggleHeader}>
+            <FaTimes size={24} color="black" />
+            {' '}
+          </button>
           <div className="logo-container">
             <img src={Logo} alt="brand-logo" />
           </div>
           <nav className="nav">
-            <NavLink to="/">Vehicles</NavLink>
+            <NavLink to="/" onClick={() => { closeHeader(); setShowContent(true); }}>Vehicles</NavLink>
             {user.isAuthenticated ? null : (
               <>
-                <NavLink to="/login">Login</NavLink>
-                <NavLink to="/signup">Signup</NavLink>
+                <NavLink to="/login" onClick={() => { closeHeader(); setShowContent(true); }}>Login</NavLink>
+                <NavLink to="/signup" onClick={() => { closeHeader(); setShowContent(true); }}>Signup</NavLink>
               </>
             )}
             {user.isAuthenticated && (
               <>
-                <NavLink to="/reservations">My Reservations</NavLink>
-                <NavLink to="/addVehicle">Add New Vehicle</NavLink>
-                <button onClick={handleLogout} type="button" className="log-out-btn">
+                <NavLink to="/reservations" onClick={() => { closeHeader(); setShowContent(true); }}>My Reservations</NavLink>
+                <NavLink to="/addVehicle" onClick={() => { closeHeader(); setShowContent(true); }}>Add New Vehicle</NavLink>
+                <button onClick={() => { handleLogout(); closeHeader(); setShowContent(false); }} type="button" className="log-out-btn">
                   Logout
                 </button>
+
               </>
             )}
             {logoutMessage && <p>{logoutMessage}</p>}
@@ -69,26 +108,28 @@ const App = () => {
             <div><FaLinkedin size={22} color="#0077b5" /></div>
             <div><FaGithub size={22} color="#171515" /></div>
           </div>
-        </header>
-
-        <div className="App-content">
-          <Routes>
-            <Route path="/" element={<Vehicles />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/addVehicle" element={<AddVehicle />} />
-            <Route path="/items/:id" element={<CarDetail />} />
-            {user.isAuthenticated && (
-              <>
-                <Route path="/reservations" element={<ReservationsList />} />
-                <Route path="/reservations/details" element={<ReservationDetails />} />
-              </>
-            )}
-          </Routes>
         </div>
+
+        {showContent && (
+          <div className="App-content">
+            <Routes>
+              <Route path="/" element={<Vehicles />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<SignUp />} />
+              <Route path="/addVehicle" element={<AddVehicle />} />
+              <Route path="/items/:id" element={<CarDetail />} />
+              {user.isAuthenticated && (
+                <>
+                  <Route path="/reservations" element={<ReservationsList />} />
+                  <Route path="/reservations/details" element={<ReservationDetails />} />
+                </>
+              )}
+            </Routes>
+          </div>
+        )}
       </div>
     </div>
   );
-};
+}
 
 export default App;
