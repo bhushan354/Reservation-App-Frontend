@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import { fetchItem } from '../redux/Item';
 import style from '../styles/Vehicles.module.css';
 
-function Vehicles() {
+const Vehicles = () => {
   const dispatch = useDispatch();
   const itemData = useSelector((state) => state.item.item);
   const [loading, setLoading] = useState(true);
@@ -20,36 +20,37 @@ function Vehicles() {
         await dispatch(fetchItem()).unwrap();
         setLoading(false);
       } catch (error) {
-        // eslint-disable-next-line no-console
         console.error('Error fetching data:', error);
+        // Handle error if needed
       }
     };
 
     fetchData();
   }, [dispatch]);
 
-  const renderItems = () => (
-    itemData.items.map((i) => (
-      <li key={i.id} className={style['vehicle-card']}>
-        <div className={style.img}>
-          <img
-            src={i.image}
-            alt={i.name}
-          />
-        </div>
-        <h3>{i.name}</h3>
-        <p>{i.description}</p>
-        <p className={style['prev-reserve']}>
-          You Reserved This Car From:
-          {' '}
-          <span>
-            {i.city}
-          </span>
-        </p>
-        <Link className={style['more-btn']} to={`/items/${i.id}`}>more Details</Link>
-      </li>
-    ))
-  );
+  const renderItems = () => itemData.items.map((i) => (
+    <li key={i.id} className={style['vehicle-card']}>
+      <div className={style.img}>
+        <img
+          src={i.image}
+          alt={i.name}
+        />
+      </div>
+      <h3>{i.name}</h3>
+      <p>
+        {' '}
+        {i.description}
+      </p>
+      <p className={style['prev-reserve']}>
+        You can Reserve This Car From:
+        {' '}
+        <span>
+          {i.city}
+        </span>
+      </p>
+      <Link className={style['more-btn']} to={`/items/${i.id}`}>more Details</Link>
+    </li>
+  ));
 
   const breakPoints = [
     { width: 1, itemsToShow: 1 },
@@ -82,6 +83,6 @@ function Vehicles() {
       )}
     </div>
   );
-}
+};
 
 export default Vehicles;

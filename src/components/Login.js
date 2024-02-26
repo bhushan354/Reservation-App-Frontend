@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import style from '../styles/Auth.module.css';
 import { loginFailure, loginSuccess } from '../redux/Auth';
 
-function Login() {
+const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
@@ -31,15 +31,16 @@ function Login() {
           },
         }),
       });
+      console.log(response, 'umair');
       const responseJson = await response.json();
       const { status } = responseJson;
+      console.log(responseJson, 'zain');
 
       if (status && status.code === 200) {
         const { data } = responseJson;
         const { firstName, lastName, email } = data;
         dispatch(loginSuccess({ user: { firstName, lastName, email } }));
         navigate('/');
-        // eslint-disable-next-line no-alert
         alert('Successfully Logged in');
       } else {
         dispatch(loginFailure());
@@ -48,7 +49,6 @@ function Login() {
         }, 1000);
       }
     } catch (error) {
-      // eslint-disable-next-line no-console
       console.error('Error parsing JSON:', error);
       dispatch(loginFailure());
       setError('An error occurred');
@@ -94,6 +94,6 @@ function Login() {
     </div>
 
   );
-}
+};
 
 export default Login;

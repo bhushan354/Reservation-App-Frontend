@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router';
 import axios from 'axios';
 import style from '../styles/Auth.module.css';
 
-function AddVehicle() {
+const AddVehicle = () => {
   const navigate = useNavigate();
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
@@ -49,6 +49,8 @@ function AddVehicle() {
           },
         },
       );
+      console.log(response, 'car');
+
       // Reset form fields first
       setName('');
       setDescription('');
@@ -61,7 +63,7 @@ function AddVehicle() {
       setcity('');
 
       if (response.data.success) {
-        // eslint-disable-next-line no-alert
+        // If success is true, display success alert
         alert('Vehicle Added successfully.');
         navigate('/');
       } else if (response.data.message && response.data.message.length > 0) {
@@ -214,6 +216,6 @@ function AddVehicle() {
       </div>
     </div>
   );
-}
+};
 
 export default AddVehicle;

@@ -5,7 +5,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router';
 import style from '../styles/Auth.module.css';
 
-function SignUp() {
+const SignUp = () => {
   const navigate = useNavigate();
   const [username, setuserName] = useState('');
   const [firstName, setfirstName] = useState('');
@@ -84,7 +84,6 @@ function SignUp() {
         setConfirmPassword('');
         setcity('');
         setError('');
-        // eslint-disable-next-line no-alert
         alert('The user signed up successfully. Now please login from the login page.');
       } else {
         const errorMessage = response.data.status.message;
@@ -189,6 +188,6 @@ function SignUp() {
       </div>
     </div>
   );
-}
+};
 
 export default SignUp;
