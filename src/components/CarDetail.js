@@ -26,11 +26,7 @@ function CarDetail() {
 
   return (
     <div className={style['section-item-details']}>
-      <div className={style['back-btn']}>
-        <button type="button">
-          Back Button
-        </button>
-      </div>
+
       <div className={style['details-img']}>
         <img
           src={itemDetailsData.image}
