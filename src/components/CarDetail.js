@@ -37,6 +37,7 @@ function CarDetail() {
         dispatch(reserveItem(response.data));
       })
       .catch((error) => {
+        // eslint-disable-next-line no-console
         console.error('Error reserving item:', error);
       });
   };

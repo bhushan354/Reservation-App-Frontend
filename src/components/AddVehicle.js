@@ -49,8 +49,6 @@ function AddVehicle() {
           },
         },
       );
-      console.log(response, 'car');
-
       // Reset form fields first
       setName('');
       setDescription('');
@@ -63,7 +61,7 @@ function AddVehicle() {
       setcity('');
 
       if (response.data.success) {
-        // If success is true, display success alert
+        // eslint-disable-next-line no-alert
         alert('Vehicle Added successfully.');
         navigate('/');
       } else if (response.data.message && response.data.message.length > 0) {

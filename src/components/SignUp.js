@@ -84,6 +84,7 @@ function SignUp() {
         setConfirmPassword('');
         setcity('');
         setError('');
+        // eslint-disable-next-line no-alert
         alert('The user signed up successfully. Now please login from the login page.');
       } else {
         const errorMessage = response.data.status.message;

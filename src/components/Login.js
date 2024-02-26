@@ -31,16 +31,15 @@ function Login() {
           },
         }),
       });
-      console.log(response, 'umair');
       const responseJson = await response.json();
       const { status } = responseJson;
-      console.log(responseJson, 'zain');
 
       if (status && status.code === 200) {
         const { data } = responseJson;
         const { firstName, lastName, email } = data;
         dispatch(loginSuccess({ user: { firstName, lastName, email } }));
         navigate('/');
+        // eslint-disable-next-line no-alert
         alert('Successfully Logged in');
       } else {
         dispatch(loginFailure());
@@ -49,6 +48,7 @@ function Login() {
         }, 1000);
       }
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error('Error parsing JSON:', error);
       dispatch(loginFailure());
       setError('An error occurred');
