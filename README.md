@@ -108,6 +108,7 @@ The back-end repo is available [here](https://github.com/bhushan354/Full-Stack-C
 - To run the project, execute the following command:
 
 ```sh
+   npm install --force
    npm start
 ```
 
