@@ -46,11 +46,12 @@ const reservationsSlice = createSlice({
       .addCase(deleteReservation.fulfilled, (state, action) => {
         state.status = 'fulfilled';
         state.reservations = state.reservations.filter((reservation) => (
-          reservation.id !== action.payload.id
+          reservation.id !== action.meta.arg
         ));
       })
-      .addCase(deleteReservation.rejected, (state) => {
+      .addCase(deleteReservation.rejected, (state, action) => {
         state.status = 'rejected';
+        state.error = action.error.message;
       });
   },
 
