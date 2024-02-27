@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
-import { Navigate } from 'react-router';
 
 function ReservationPage() {
   const [sendCity, setsendCity] = useState('');
@@ -19,20 +18,26 @@ function ReservationPage() {
       reserveForUseDate: date,
     };
 
-    // eslint-disable-next-line no-unused-vars
-    const response = await axios.post(
-      'http://127.0.0.1:3000/api/v1/reservations',
-      dataToSend,
-      {
-        headers: {
-          'Content-Type': 'application/json',
+    try {
+      // eslint-disable-next-line no-unused-vars
+      const response = await axios.post(
+        'http://127.0.0.1:3000/api/v1/reservations',
+        dataToSend,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
         },
-      },
-    );
+      );
 
-    Navigate('/reservations');
-    setsendCity('');
-    setdate('');
+      setsendCity('');
+      setdate('');
+      // eslint-disable-next-line no-alert
+      alert('Vechile Reserved');
+    } catch (error) {
+      // Handle error if needed
+      console.error('Error submitting reservation:', error);
+    }
   };
 
   return (
