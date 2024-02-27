@@ -73,7 +73,7 @@ function ReservationsList() {
       </p>
       <button
         type="button"
-        className={style['delete-button']}
+        className={style['cancel-reservation']}
         onClick={() => handleDeleteReservation(reservation.id)}
       >
         Delete Reservation
