@@ -1,13 +1,11 @@
 import React, { useEffect } from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { useSelector, useDispatch } from 'react-redux';
-import axios from 'axios';
 import { fetchDetailItem } from '../redux/ItemDeatils';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import style from '../styles/Vehicles.module.css';
-import { reserveItem } from '../redux/reservationsSlice';
 
 function CarDetail() {
   const { id } = useParams();
@@ -24,23 +22,6 @@ function CarDetail() {
   if (!itemDetailsData || !user) {
     return <p>Loading...</p>;
   }
-
-  const handleReserve = () => {
-    const requestData = {
-      customer_id: user.id,
-      reserve_for_use_date: new Date().toISOString().split('T')[0],
-      city: itemDetailsData.city,
-    };
-
-    axios.post('http://localhost:3000/api/v1/reservations', requestData)
-      .then((response) => {
-        dispatch(reserveItem(response.data));
-      })
-      .catch((error) => {
-        // eslint-disable-next-line no-console
-        console.error('Error reserving item:', error);
-      });
-  };
 
   return (
     <div className={style['section-item-details']}>
@@ -80,12 +61,7 @@ function CarDetail() {
           {' '}
           {itemDetailsData.reservation_count}
         </p>
-        <form className={style['reserve-form']} onSubmit={handleReserve}>
-          <button type="submit">Reserve</button>
-        </form>
-        <button className={style['cancel-reservation']} type="button">
-          Cancel Reservation
-        </button>
+        <Link className={style['cancel-reservation']} to="/reservationsPage">Reserve</Link>
         <button className={style['add-new']} type="button">
           Add new
         </button>

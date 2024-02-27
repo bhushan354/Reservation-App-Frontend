@@ -15,11 +15,12 @@ import Vehicles from './components/Vehicles';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import AddVehicle from './components/AddVehicle';
+import DeleteVehicle from './components/DeleteVehicle';
 import CarDetail from './components/CarDetail';
 import { logout } from './redux/Auth';
 import style from './styles/Vehicles.module.css';
 import ReservationsList from './components/ReservationsList';
-import ReservationDetails from './components/ReservationDetails';
+import ReservationPage from './components/ReservationPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -93,6 +94,9 @@ function App() {
               <>
                 <NavLink to="/reservations" onClick={() => { closeHeader(); setShowContent(true); }}>My Reservations</NavLink>
                 <NavLink to="/addVehicle" onClick={() => { closeHeader(); setShowContent(true); }}>Add New Vehicle</NavLink>
+
+                <NavLink to="/deleteVehicle" onClick={() => { closeHeader(); setShowContent(true); }}>Delete Vehicle</NavLink>
+
                 <button onClick={() => { handleLogout(); closeHeader(); setShowContent(false); }} type="button" className="log-out-btn">
                   Logout
                 </button>
@@ -117,11 +121,14 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<SignUp />} />
               <Route path="/addVehicle" element={<AddVehicle />} />
+
+              <Route path="/deleteVehicle" element={<DeleteVehicle />} />
+
               <Route path="/items/:id" element={<CarDetail />} />
               {user.isAuthenticated && (
                 <>
                   <Route path="/reservations" element={<ReservationsList />} />
-                  <Route path="/reservations/details" element={<ReservationDetails />} />
+                  <Route path="/reservationsPage" element={<ReservationPage />} />
                 </>
               )}
             </Routes>
