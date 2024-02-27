@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { reserveItem } from '../redux/reservationsSlice';
 
 function ReservationPage() {
   const dispatch = useDispatch();
+  const [sendCity, setsendCity] = useState('');
+  const [date, setdate] = useState('');
 
   const itemData = useSelector((state) => state.item.item);
   console.log(itemData.item, 'umair');
@@ -12,10 +14,14 @@ function ReservationPage() {
     e.preventDefault();
     dispatch(
       reserveItem({
-        // item_id: item.id,
+        item_id: itemData.item,
+        city: sendCity,
+        reserveDate: date,
       }),
     );
     // Navigate('/myreservations');
+    setsendCity('');
+    setdate('');
   };
 
   return (
@@ -29,12 +35,25 @@ function ReservationPage() {
           </div>
           <div>{itemData.item.description}</div>
           <div>
-            <span>City:</span>
+            <label htmlFor="reserve-city">
+              <span>City:</span>
+              <input
+                id="item-city"
+                type="text"
+                value={sendCity}
+                onChange={(e) => setsendCity(e.target.value)}
+                placeholder="City"
+                required
+              />
+            </label>
+          </div>
+          <div>
             <input
-              id="item-city"
-              type="text"
-              placeholder="City"
-              required
+              type="date"
+              id="reserve-date"
+              name="date"
+              value={date}
+              onChange={(e) => setdate(e.target.value)}
             />
           </div>
           <button type="submit">Submit</button>
