@@ -92,7 +92,7 @@ function ReservationsList() {
     <div>
       <h2 className={style['vehicle-heading']}>Your Reservations</h2>
       {isLoading ? (
-        <p>Loading...</p>
+        <p className={style.loading}>Loading...</p>
       ) : (
         <Carousel breakPoints={breakPoints}>{renderReservations()}</Carousel>
       )}

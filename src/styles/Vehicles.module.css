@@ -203,3 +203,10 @@
   padding: 1rem 2rem;
   border-radius: 20rem;
 }
+
+.loading {
+  font-size: 2rem;
+  color: black;
+  font-weight: bold;
+  margin-top: 1rem;
+}
