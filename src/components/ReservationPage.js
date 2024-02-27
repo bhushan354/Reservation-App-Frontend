@@ -1,25 +1,36 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { reserveItem } from '../redux/reservationsSlice';
+import { useSelector } from 'react-redux';
+import axios from 'axios';
+import { Navigate } from 'react-router';
 
 function ReservationPage() {
-  const dispatch = useDispatch();
   const [sendCity, setsendCity] = useState('');
   const [date, setdate] = useState('');
 
   const itemData = useSelector((state) => state.item.item);
-  console.log(itemData.item, 'umair');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(
-      reserveItem({
-        item_id: itemData.item,
-        city: sendCity,
-        reserveDate: date,
-      }),
+
+    const dataToSend = {
+      customer_id: 1,
+      item_id: itemData.item.id,
+      city: sendCity,
+      reserveForUseDate: date,
+    };
+
+    // eslint-disable-next-line no-unused-vars
+    const response = await axios.post(
+      'http://127.0.0.1:3000/api/v1/reservations',
+      dataToSend,
+      {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      },
     );
-    // Navigate('/myreservations');
+
+    Navigate('/reservations');
     setsendCity('');
     setdate('');
   };
