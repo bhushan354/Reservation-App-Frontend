@@ -19,7 +19,7 @@ import CarDetail from './components/CarDetail';
 import { logout } from './redux/Auth';
 import style from './styles/Vehicles.module.css';
 import ReservationsList from './components/ReservationsList';
-import ReservationDetails from './components/ReservationDetails';
+import ReservationPage from './components/ReservationPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -121,7 +121,7 @@ function App() {
               {user.isAuthenticated && (
                 <>
                   <Route path="/reservations" element={<ReservationsList />} />
-                  <Route path="/reservations/details" element={<ReservationDetails />} />
+                  <Route path="/reservationsPage" element={<ReservationPage />} />
                 </>
               )}
             </Routes>
