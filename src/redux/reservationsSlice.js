@@ -19,8 +19,12 @@ export const deleteReservation = createAsyncThunk(
 
 export const reserveItem = createAsyncThunk(
   'reservations/reserveItem',
-  async (itemId) => {
-    const response = await axios.post('http://localhost:3000/api/v1/reservations', { itemId });
+  async ({ itemId, city, reserveDate }) => {
+    const response = await axios.post('http://localhost:3000/api/v1/reservations', {
+      itemId,
+      city,
+      reserveDate,
+    });
     return response.data;
   },
 );
