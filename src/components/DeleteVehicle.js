@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import style from '../styles/Auth.module.css'; // Import the CSS module
+import style from '../styles/Auth.module.css';
 
 export default function DeleteVehicle() {
   const [itemId, setItemId] = useState('');
