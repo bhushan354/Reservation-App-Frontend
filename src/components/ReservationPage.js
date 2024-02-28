@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
-import style from '../styles/Auth.module.css';
+import style from '../styles/ReservationPage.module.css';
 
 function ReservationPage() {
   const [sendCity, setsendCity] = useState('');
@@ -45,17 +45,23 @@ function ReservationPage() {
     <div className="reserve-Div">
       <div className={`${style['section-auth-container']} ${style.container}`}>
         <h2 className={style.heading}>Book a Test Ride</h2>
+        <div className={style.img}>
+          <img
+            src={itemData.item.image}
+            alt={itemData.item.name}
+          />
+        </div>
         <div className={style['page-content']}>
-          <form onSubmit={handleSubmit} className={style['new-item-form']}>
-            <div>
+          <form onSubmit={handleSubmit} className={style.form}>
+            <div className={style.title}>
               <span>BOOK A </span>
               {itemData.item.name}
               <span> TEST - RIDE</span>
             </div>
-            <div>{itemData.item.description}</div>
+            <div className={style.desc}>{itemData.item.description}</div>
             <div>
               <label htmlFor="reserve-city">
-                <span>City:</span>
+                <span className={style.inputHeading}>City:</span>
                 <input
                   id="item-city"
                   type="text"
@@ -67,15 +73,18 @@ function ReservationPage() {
               </label>
             </div>
             <div>
-              <input
-                type="date"
-                id="reserve-date"
-                name="date"
-                value={date}
-                onChange={(e) => setdate(e.target.value)}
-              />
+              <label htmlFor="reserve-date">
+                <span className={style.inputHeading}>Date:</span>
+                <input
+                  type="date"
+                  id="reserve-date"
+                  name="date"
+                  value={date}
+                  onChange={(e) => setdate(e.target.value)}
+                />
+              </label>
             </div>
-            <button type="submit" className={style['submit-btn']}>Submit</button>
+            <button type="submit" className={style['submit-btn']}>Book Now</button>
           </form>
         </div>
       </div>

@@ -57,9 +57,6 @@ function Login() {
 
   return (
     <div className={style['section-auth-container']}>
-      <div className={`${style.color} ${style['color-1']}`} />
-      <div className={`${style.color} ${style['color-2']}`} />
-      <div className={`${style.color} ${style['color-3']}`} />
       <div className={style.box}>
         <div className={style.container}>
           <h2 className={style.heading}>Login Form</h2>
