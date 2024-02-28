@@ -55,7 +55,11 @@
 
 ### Key Features <a name="key-features"></a>
 
-- 🔰 *Splash Welcome page*
+- 🔰 *User Authentication:* secure login using email and password.
+- 🔰 *Navigation Panel:* has links to browse and reserve cars. "My Reservations" page for booking management, and "Add Car" and "Delete Car" links for administrators.
+- 🔰 *Main Page:* Displays a list of available cars. Clicking on a specific car provides access to its details page.
+- 🔰 *Details Page:* Shows comprehensive details of the selected car and a "Reserve" button for making a reservation.
+- 🔰 *Reserve Form:* Allows users to reserve a car by selecting a date and city.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
