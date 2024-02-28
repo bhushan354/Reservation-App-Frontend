@@ -111,12 +111,13 @@ The back-end repo is available [here](https://github.com/bhushan354/Full-Stack-C
 ```
 
 
-- Now Headover To Backend-Repo and follow setup to make sure your app is working fine with rails as a backend : https://github.com/bhushan354/Full-Stack-Capstone-Backend/tree/dev
-
 ```sh
    npm install --force
    PORT=3001 npm start
 ```
+
+- Now Headover To Backend-Repo and follow setup to make sure your app is working fine with rails as a backend : https://github.com/bhushan354/Full-Stack-Capstone-Backend/tree/dev
+
 
 ### Deployment
 
