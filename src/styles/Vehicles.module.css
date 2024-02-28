@@ -27,11 +27,11 @@
 }
 
 .title-heading {
-  color: #333;
+  color: rgb(131, 2, 37);
   letter-spacing: 2px;
   text-transform: uppercase;
   margin: 3rem 0 3rem 0;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   font-weight: bold;
 }
 
