@@ -103,9 +103,6 @@ The back-end repo is available [here](https://github.com/bhushan354/Full-Stack-C
       "react-elastic-carousel": "^0.11.5",
 ```
 
-- Update the database.yml with your database credentials under the development section
-
-
 ### Usage
 
 - To run the project, execute the following command:
@@ -113,7 +110,7 @@ The back-end repo is available [here](https://github.com/bhushan354/Full-Stack-C
 ```sh
    git checkout dev
    npm install --force
-   npm start
+   PORT=3001 npm start
 ```
 
 ### Deployment
