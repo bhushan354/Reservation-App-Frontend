@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
+import { useNavigate } from 'react-router';
 import style from '../styles/ReservationPage.module.css';
 
 function ReservationPage() {
+  const navigate = useNavigate();
   const [sendCity, setsendCity] = useState('');
   const [date, setdate] = useState('');
-
   const itemData = useSelector((state) => state.item.item);
 
   const handleSubmit = async (e) => {
@@ -35,6 +36,7 @@ function ReservationPage() {
       setdate('');
       // eslint-disable-next-line no-alert
       alert('Vehicle Reserved');
+      navigate('/');
     } catch (error) {
       // Handle error if needed
       console.error('Error submitting reservation:', error);

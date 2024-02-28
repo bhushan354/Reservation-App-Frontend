@@ -17,6 +17,14 @@ export const deleteReservation = createAsyncThunk(
   },
 );
 
+export const addReservation = createAsyncThunk(
+  'reservations/addReservation',
+  async (newReservation) => {
+    const response = await axios.post('http://localhost:3000/api/v1/reservations', newReservation);
+    return response.data;
+  },
+);
+
 const reservationsSlice = createSlice({
   name: 'reservations',
   initialState: {

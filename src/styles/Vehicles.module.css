@@ -100,6 +100,17 @@
   text-transform: uppercase;
 }
 
+.login-to-details {
+  display: inline-block;
+  background-image: linear-gradient(to right, rgb(253, 57, 237), rgb(131, 2, 37));
+  color: #fff !important;
+  font-size: 1.6rem;
+  padding: 1rem;
+  width: 100%;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
 .section-item-details {
   padding: 6rem 4rem 2rem 0;
   min-height: 100vh;
