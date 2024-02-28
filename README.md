@@ -61,7 +61,7 @@
 
 ## Back-End-Link
 
-The back-end repo is available [here](https://github.com/bhushan354/Full-Stack-Capstone-Frontend)
+The back-end repo is available [here](https://github.com/bhushan354/Full-Stack-Capstone-Backend)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -114,6 +114,7 @@ The back-end repo is available [here](https://github.com/bhushan354/Full-Stack-C
 ```
 
 - Now Headover To Backend-Repo and follow setup to make sure your app is working fine with rails as a backend : https://github.com/bhushan354/Full-Stack-Capstone-Backend/tree/dev
+
 
 ### Deployment
 
