@@ -190,6 +190,7 @@
   color: white;
   padding: 1rem 2rem;
   border-radius: 20rem;
+  text-decoration: none;
 }
 
 .cancel-reservation {
@@ -202,6 +203,7 @@
   color: white;
   padding: 1rem 2rem;
   border-radius: 20rem;
+  text-decoration: none;
 }
 
 .loading {
