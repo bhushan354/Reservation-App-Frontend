@@ -10,7 +10,7 @@ import {
   Routes, Route, NavLink, useNavigate, Link,
 } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import Logo from './assets/images/logo.png.jpg';
+import Logo from './assets/images/logo.jpg';
 import Vehicles from './components/Vehicles';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
