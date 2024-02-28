@@ -13,7 +13,7 @@ export default function DeleteVehicle() {
         const response = await axios.get('http://localhost:3000/api/v1/items');
         setItems(response.data.items);
       } catch (error) {
-        throw ('Error fetching items:', error);
+        throw ('Error fetching vehicles:', error);
       }
     };
 
@@ -25,8 +25,8 @@ export default function DeleteVehicle() {
       const response = await axios.delete(`http://localhost:3000/api/v1/items/${itemId}`);
       setMessage(response.data.message);
     } catch (error) {
-      setMessage('Error deleting item');
-      throw ('Error deleting item:', error);
+      setMessage('Error deleting the vehicle');
+      throw ('Error deleting the vehicle:', error);
     }
   };
 
