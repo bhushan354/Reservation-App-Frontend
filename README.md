@@ -158,7 +158,13 @@ The back-end repo is available [here](https://github.com/bhushan354/Full-Stack-C
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- *Add info about each category*
+- *Search and Filter Functionality*
+- *User Ratings and Reviews*
+- *Discounts and Promotions*
+- *Multi-language Support*
+- *Integration with Maps*
+- *Payment Integration*
+- *User Profile Management*
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
