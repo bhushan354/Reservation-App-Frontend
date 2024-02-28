@@ -27,11 +27,11 @@
 }
 
 .title-heading {
-  color: #333;
+  color: rgb(131, 2, 37);
   letter-spacing: 2px;
   text-transform: uppercase;
   margin: 3rem 0 3rem 0;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   font-weight: bold;
 }
 
@@ -93,6 +93,17 @@
   display: inline-block;
   background-image: linear-gradient(to right, rgb(253, 57, 237), rgb(131, 2, 37));
   color: #fff;
+  font-size: 1.6rem;
+  padding: 1rem;
+  width: 100%;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.login-to-details {
+  display: inline-block;
+  background-image: linear-gradient(to right, rgb(253, 57, 237), rgb(131, 2, 37));
+  color: #fff !important;
   font-size: 1.6rem;
   padding: 1rem;
   width: 100%;
@@ -190,6 +201,7 @@
   color: white;
   padding: 1rem 2rem;
   border-radius: 20rem;
+  text-decoration: none;
 }
 
 .cancel-reservation {
@@ -202,4 +214,12 @@
   color: white;
   padding: 1rem 2rem;
   border-radius: 20rem;
+  text-decoration: none;
+}
+
+.loading {
+  font-size: 2rem;
+  color: black;
+  font-weight: bold;
+  margin-top: 1rem;
 }

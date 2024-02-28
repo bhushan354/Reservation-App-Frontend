@@ -56,15 +56,8 @@ function CarDetail() {
             <span>{itemDetailsData.apr}</span>
           </p>
         </div>
-        <p>
-          Your total reservation
-          {' '}
-          {itemDetailsData.reservation_count}
-        </p>
         <Link className={style['cancel-reservation']} to="/reservationsPage">Reserve</Link>
-        <button className={style['add-new']} type="button">
-          Add new
-        </button>
+        <Link className={style['add-new']} to="/addVehicle">Add New Vehicle</Link>
       </div>
     </div>
   );

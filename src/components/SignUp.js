@@ -75,7 +75,7 @@ function SignUp() {
 
       if (response.status === 200) {
         // Successful signup
-        navigate('/');
+        navigate('/login');
         setuserName('');
         setfirstName('');
         setlastName('');
@@ -106,9 +106,6 @@ function SignUp() {
 
   return (
     <div className={style['section-auth-container']}>
-      <div className={`${style.color} ${style['color-1']}`} />
-      <div className={`${style.color} ${style['color-2']}`} />
-      <div className={`${style.color} ${style['color-3']}`} />
       <div className={style.box}>
         <div className={style.container}>
           <h2 className={style.heading}>Registration</h2>

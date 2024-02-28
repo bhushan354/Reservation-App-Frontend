@@ -50,7 +50,7 @@ function App() {
       setLogoutMessage('Logout successful');
       setTimeout(() => {
         setLogoutMessage('');
-      }, 1000);
+      }, 2000);
       navigate('/');
     } catch (error) {
       setLogoutMessage('Logout failed');
@@ -103,7 +103,7 @@ function App() {
 
               </>
             )}
-            {logoutMessage && <p>{logoutMessage}</p>}
+            {logoutMessage && <p className="logOut-msg">{logoutMessage}</p>}
           </nav>
 
           <div className="app-social-links">

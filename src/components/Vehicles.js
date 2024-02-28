@@ -40,13 +40,14 @@ function Vehicles() {
         <h3>{i.name}</h3>
         <p>{i.description}</p>
         <p className={style['prev-reserve']}>
-          You Reserved This Car From:
+          This Car is Added From:
           {' '}
           <span>
             {i.city}
           </span>
         </p>
-        <Link className={style['more-btn']} to={`/items/${i.id}`}>more Details</Link>
+        {user.isAuthenticated ? (<Link className={style['more-btn']} to={`/items/${i.id}`}>more Details</Link>
+        ) : (<p className={style['login-to-details']}>Please Login to View More Details</p>)}
       </li>
     ))
   );

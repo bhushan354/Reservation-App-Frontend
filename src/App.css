@@ -131,6 +131,14 @@ ul {
   justify-content: space-between;
 }
 
+.logOut-msg {
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: red;
+  text-align: center;
+  width: 100%;
+}
+
 @media screen and (max-width: 768px) {
   .App-header {
     position: fixed;
