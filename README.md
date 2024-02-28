@@ -11,7 +11,7 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 hello-rails-front-end](#-hello-rails-front-end)
+- [📖 Full-Stack-Capstone-Frontend](#-full-stack-capstone-frontend)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -30,9 +30,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 hello-rails-front-end
+# 📖 Full-Stack-Capstone-Frontend
 
-**The hello-rails-front-end** is a mobile web application where user can fetch the greetings.
+*The Full-Stack-Capstone-Frontend* is a mobile web application where user can Make reservation and new car and delet the car.
 
 ## 🛠 Built With <a name="built-with"></a>
 - ✅ Ruby
@@ -55,13 +55,13 @@
 
 ### Key Features <a name="key-features"></a>
 
-- 🔰 **Splash Welcome page**
+- 🔰 *Splash Welcome page*
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Back-End-Link
 
-The back-end repo is available [here](https://github.com/bhushan354/Full-Stack-Capstone-Frontend)
+The back-end repo is available [here](https://github.com/bhushan354/Full-Stack-Capstone-Backend)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -69,14 +69,14 @@ The back-end repo is available [here](https://github.com/bhushan354/Full-Stack-C
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-**To get a local copy up and running, follow these steps.**
+*To get a local copy up and running, follow these steps.*
 
 1. Download or clone this [repostory](git@github.com:bhushan354/Full-Stack-Capstone-Frontend.git).
 2. Provide a modern web browser.
 
 ### Prerequisites
 
-**In order to run this project you need:**
+*In order to run this project you need:*
 
 - ✔ Ruby installed in your machine. you can download it from [here](https://www.ruby-lang.org/en/downloads/)
 - ✔ IDE or a code editor installed in your machine.
@@ -93,28 +93,32 @@ The back-end repo is available [here](https://github.com/bhushan354/Full-Stack-C
 
 - Run this command in your command line interface:
 
-```sh
+sh
   cd [YOUR FOLDER]
-  git git@github.com:bhushan354/Full-Stack-Capstone-Frontend.git
-  cd hello-rails-front-end
- 
-```
+  git clone git@github.com:bhushan354/Full-Stack-Capstone-Frontend.git
+  cd Full-Stack-Capstone-Frontend
 
-- Update the database.yml with your database credentials under the development section
+- Open the project in your favourite code editor, Add this piece of code into the dependencies of package.json file:
+sh
+      "react-elastic-carousel": "^0.11.5",
 
 
 ### Usage
 
 - To run the project, execute the following command:
 
-```sh
+sh
+   git checkout dev
    npm install --force
-   npm start
-```
+   PORT=3001 npm start
+
+
+- Now Headover To Backend-Repo and follow setup to make sure your app is working fine with rails as a backend : https://github.com/bhushan354/Full-Stack-Capstone-Backend/tree/dev
+
 
 ### Deployment
 
-**This project is deployed by the author, no permission for deployment by any other client.**
+*This project is deployed by the author, no permission for deployment by any other client.*
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -123,19 +127,19 @@ The back-end repo is available [here](https://github.com/bhushan354/Full-Stack-C
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Umauir Muqeem**
+👤 *Umauir Muqeem*
 
 - GitHub: [@bhushan354](https://github.com/bhushan354)
 - Twitter: [@umair_ra0](https://twitter.com/umair_ra0)
 - LinkedIn: [Umair Muqeem](https://linkedin.com/in/engr-umair-muqeem)
 
-👤 **Eugene Omwomo**
+👤 *Eugene Omwomo*
 
 - GitHub: [@Omwomo](https://github.com/Omwomo)
 - Twitter: [@eugeneoduor9](https://twitter.com/eugeneoduor9)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/Omwomo)
 
-👤 **Bhushan Deshmukh**
+👤 *Bhushan Deshmukh*
 
 - GitHub: [@bhushan354](https://github.com/bhushan354)
 - LinkedIn: [Bhushan Deshmukh](https://www.linkedin.com/in/bhushan-deshmukh-5777851b1/)
@@ -148,7 +152,7 @@ The back-end repo is available [here](https://github.com/bhushan354/Full-Stack-C
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- **Add info about each category**
+- *Add info about each category*
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -174,7 +178,7 @@ If you like this project, kindly drop a start ⭐️ for the [repository](git@gi
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to express my heartfelt gratitude to **Microvere** for the invaluable learning experience they have provided. Also I would like to thank to Stanley osagie for his support during react.
+I would like to express my heartfelt gratitude to *Microvere* for the invaluable learning experience they have provided. Also I would like to thank to Stanley osagie for his support during react.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -185,4 +189,3 @@ I would like to express my heartfelt gratitude to **Microvere** for the invaluab
 This project is [MIT](./LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
