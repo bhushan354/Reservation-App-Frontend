@@ -112,6 +112,7 @@ function App() {
             <Link to="https://linkedin.com" target="_blank"><FaLinkedin size={22} color="#0077b5" /></Link>
             <Link to="https://github.com" target="_blank"><FaGithub size={22} color="#171515" /></Link>
           </div>
+          <div>&copy; 2024 Microverse E.U - B.D & U.M</div>
         </div>
 
         {showContent && (
