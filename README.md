@@ -60,6 +60,10 @@
 - 🔰 *Main Page:* Displays a list of available cars. Clicking on a specific car provides access to its details page.
 - 🔰 *Details Page:* Shows comprehensive details of the selected car and a "Reserve" button for making a reservation.
 - 🔰 *Reserve Form:* Allows users to reserve a car by selecting a date and city.
+- 🔰 *Delete car:* Accessible only by administrators, displays a list of all cars with a "Delete" button. Deleted cars are marked as removed and do not appear on the main list.
+- 🔰 *Responsive design:* Both mobile and desktop versions for optimal user experience.
+- 🔰 *My Reservations:* Users can view a list of their reservations, including car name, date, and city.
+- 🔰 *Autofill for Reservations:* Reservations autofill username and selected car details. Additional inputs for date and city based on the "Book a Car" design.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
