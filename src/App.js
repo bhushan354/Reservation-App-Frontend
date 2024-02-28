@@ -83,22 +83,22 @@ function App() {
             <img src={Logo} alt="brand-logo" />
           </div>
           <nav className="nav">
-            <NavLink to="/" onClick={() => { closeHeader(); setShowContent(true); }}>Vehicles</NavLink>
+            <NavLink to="/" onClick={() => { closeHeader(); setShowContent(true); }}>VEHICLES</NavLink>
             {user.isAuthenticated ? null : (
               <>
-                <NavLink to="/login" onClick={() => { closeHeader(); setShowContent(true); }}>Login</NavLink>
-                <NavLink to="/signup" onClick={() => { closeHeader(); setShowContent(true); }}>Signup</NavLink>
+                <NavLink to="/login" onClick={() => { closeHeader(); setShowContent(true); }}>LOGIN</NavLink>
+                <NavLink to="/signup" onClick={() => { closeHeader(); setShowContent(true); }}>SIGN UP</NavLink>
               </>
             )}
             {user.isAuthenticated && (
               <>
-                <NavLink to="/reservations" onClick={() => { closeHeader(); setShowContent(true); }}>My Reservations</NavLink>
-                <NavLink to="/addVehicle" onClick={() => { closeHeader(); setShowContent(true); }}>Add New Vehicle</NavLink>
+                <NavLink to="/reservations" onClick={() => { closeHeader(); setShowContent(true); }}>MY RESERVATIONS</NavLink>
+                <NavLink to="/addVehicle" onClick={() => { closeHeader(); setShowContent(true); }}>ADD NEW VEHICLE</NavLink>
 
-                <NavLink to="/deleteVehicle" onClick={() => { closeHeader(); setShowContent(true); }}>Delete Vehicle</NavLink>
+                <NavLink to="/deleteVehicle" onClick={() => { closeHeader(); setShowContent(true); }}>DELETE VEHICLE</NavLink>
 
                 <button onClick={() => { handleLogout(); closeHeader(); setShowContent(false); }} type="button" className="log-out-btn">
-                  Logout
+                  LOGOUT
                 </button>
 
               </>
