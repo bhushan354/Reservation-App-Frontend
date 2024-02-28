@@ -26,7 +26,6 @@ export default function DeleteVehicle() {
       setMessage(response.data.message);
     } catch (error) {
       setMessage('Cannot delete Vehicle as you have active reservation for this Vehicle. Please cancel your reservation first');
-      throw ('Cannot delete Vehicle as you have active reservation for this Vehicle. Please cancel your reservation first', error);
     }
   };
 
