@@ -6,7 +6,6 @@
   <h3><b>Full-Stack-Capstone-Frontend</b></h3>
 
 </div>
-<!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
 
@@ -28,7 +27,6 @@
   - [🙏 Acknowledgments ](#-acknowledgments-)
   - [📝 License ](#-license-)
 
-<!-- PROJECT DESCRIPTION -->
 
 # 📖 Full-Stack-Capstone-Frontend
 
@@ -51,7 +49,6 @@
   </ul>
 </details>
 
-<!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
@@ -73,7 +70,6 @@ The back-end repo is available [here](https://github.com/bhushan354/Full-Stack-C
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
@@ -128,7 +124,6 @@ The back-end repo is available [here](https://github.com/bhushan354/Full-Stack-C
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- AUTHORS -->
 
 
 ## 👥 Authors <a name="authors"></a>
@@ -154,7 +149,6 @@ The back-end repo is available [here](https://github.com/bhushan354/Full-Stack-C
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
@@ -168,7 +162,6 @@ The back-end repo is available [here](https://github.com/bhushan354/Full-Stack-C
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
 
@@ -178,7 +171,6 @@ Feel free to check the [issues page](https://github.com/bhushan354/Full-Stack-Ca
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- SUPPORT -->
 
 ## ⭐️ Show your support <a name="support"></a>
 
@@ -186,7 +178,6 @@ If you like this project, kindly drop a start ⭐️ for the [repository](git@gi
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
@@ -194,7 +185,6 @@ We would like to express my heartfelt gratitude to *Microvere* for the invaluabl
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LICENSE -->
 
 ## 📝 License <a name="license"></a>
 
