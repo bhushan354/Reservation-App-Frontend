@@ -7,7 +7,7 @@ import {
   FaTimes,
 } from 'react-icons/fa';
 import {
-  Routes, Route, NavLink, useNavigate,
+  Routes, Route, NavLink, useNavigate, Link,
 } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Logo from './assets/images/logo.png.jpg';
@@ -107,10 +107,10 @@ function App() {
           </nav>
 
           <div className="app-social-links">
-            <div><FaFacebook size={22} color="#3b5998" /></div>
-            <div><FaTwitter size={22} color="#1da1f2" /></div>
-            <div><FaLinkedin size={22} color="#0077b5" /></div>
-            <div><FaGithub size={22} color="#171515" /></div>
+            <Link to="https://facebook.com" target="_blank"><FaFacebook size={22} color="#3b5998" /></Link>
+            <Link to="https://twitter.com" target="_blank"><FaTwitter size={22} color="#1da1f2" /></Link>
+            <Link to="https://linkedin.com" target="_blank"><FaLinkedin size={22} color="#0077b5" /></Link>
+            <Link to="https://github.com" target="_blank"><FaGithub size={22} color="#171515" /></Link>
           </div>
         </div>
 
