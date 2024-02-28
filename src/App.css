@@ -69,10 +69,12 @@ ul {
   width: 100%;
   flex: 1;
   padding-left: 2rem;
+  text-align: left;
 }
 
 .nav a {
   padding: 1rem 0;
+  padding-left: 1rem;
   font-size: 1.6rem;
   width: calc(100% - 2rem);
   text-decoration: none;
@@ -101,6 +103,7 @@ ul {
   font-weight: bold;
   color: white;
   cursor: pointer;
+  text-align: center;
 }
 
 .logo-container {
