@@ -95,21 +95,22 @@ The back-end repo is available [here](https://github.com/bhushan354/Full-Stack-C
 
 ```sh
   cd [YOUR FOLDER]
-  git git@github.com:bhushan354/Full-Stack-Capstone-Frontend.git
-  cd hello-rails-front-end
- 
+  git clone git@github.com:bhushan354/Full-Stack-Capstone-Frontend.git
+  cd Full-Stack-Capstone-Frontend
 ```
-
-- Update the database.yml with your database credentials under the development section
-
+- Open the project in your favourite code editor, Add this piece of code into the dependencies of package.json file:
+```sh
+      "react-elastic-carousel": "^0.11.5",
+```
 
 ### Usage
 
 - To run the project, execute the following command:
 
 ```sh
+   git checkout dev
    npm install --force
-   npm start
+   PORT=3001 npm start
 ```
 
 ### Deployment
@@ -185,4 +186,3 @@ I would like to express my heartfelt gratitude to **Microvere** for the invaluab
 This project is [MIT](./LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
