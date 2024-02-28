@@ -32,7 +32,7 @@
 
 # 📖 Full-Stack-Capstone-Frontend
 
-*The Full-Stack-Capstone-Frontend* is a mobile web application where user can Make reservation and new car and delet the car.
+*The Full-Stack-Capstone-Frontend* is a web application designed to streamline the process of renting cars. Users can log in securely using their username and access various features through a navigation panel. The system allows users to browse available cars, make reservations, manage bookings, add new cars to the inventory, and delete them. The application is responsive, providing both mobile and desktop versions for a user-friendly experience.
 
 ## 🛠 Built With <a name="built-with"></a>
 - ✅ Ruby
