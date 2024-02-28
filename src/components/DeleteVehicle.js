@@ -13,7 +13,7 @@ export default function DeleteVehicle() {
         const response = await axios.get('http://localhost:3000/api/v1/items');
         setItems(response.data.items);
       } catch (error) {
-        console.error('Error fetching items:', error);
+        throw ('Error fetching vehicles:', error);
       }
     };
 
@@ -25,8 +25,8 @@ export default function DeleteVehicle() {
       const response = await axios.delete(`http://localhost:3000/api/v1/items/${itemId}`);
       setMessage(response.data.message);
     } catch (error) {
-      setMessage('Error deleting item');
-      console.error('Error deleting item:', error);
+      setMessage('Cannot delete Vehicle as you have active reservation for this Vehicle. Please cancel your reservation first');
+      throw ('Cannot delete Vehicle as you have active reservation for this Vehicle. Please cancel your reservation first', error);
     }
   };
 

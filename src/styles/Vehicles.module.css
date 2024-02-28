@@ -161,13 +161,13 @@
   align-items: center;
   justify-content: space-between;
   font-size: 1.4rem;
-  color: #777;
+  color: #000;
   margin: 0;
 }
 
 .details-des .dark-bg {
-  background-color: #aaa;
-  color: #fff;
+  background-color: #cebebea2;
+  color: #000;
 }
 
 .date-form {

@@ -7,10 +7,10 @@ import {
   FaTimes,
 } from 'react-icons/fa';
 import {
-  Routes, Route, NavLink, useNavigate,
+  Routes, Route, NavLink, useNavigate, Link,
 } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import Logo from './assets/images/logo.png';
+import Logo from './assets/images/logo.jpg';
 import Vehicles from './components/Vehicles';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
@@ -83,22 +83,22 @@ function App() {
             <img src={Logo} alt="brand-logo" />
           </div>
           <nav className="nav">
-            <NavLink to="/" onClick={() => { closeHeader(); setShowContent(true); }}>Vehicles</NavLink>
+            <NavLink to="/" onClick={() => { closeHeader(); setShowContent(true); }}>VEHICLES</NavLink>
             {user.isAuthenticated ? null : (
               <>
-                <NavLink to="/login" onClick={() => { closeHeader(); setShowContent(true); }}>Login</NavLink>
-                <NavLink to="/signup" onClick={() => { closeHeader(); setShowContent(true); }}>Signup</NavLink>
+                <NavLink to="/login" onClick={() => { closeHeader(); setShowContent(true); }}>LOGIN</NavLink>
+                <NavLink to="/signup" onClick={() => { closeHeader(); setShowContent(true); }}>SIGN UP</NavLink>
               </>
             )}
             {user.isAuthenticated && (
               <>
-                <NavLink to="/reservations" onClick={() => { closeHeader(); setShowContent(true); }}>My Reservations</NavLink>
-                <NavLink to="/addVehicle" onClick={() => { closeHeader(); setShowContent(true); }}>Add New Vehicle</NavLink>
+                <NavLink to="/reservations" onClick={() => { closeHeader(); setShowContent(true); }}>MY RESERVATIONS</NavLink>
+                <NavLink to="/addVehicle" onClick={() => { closeHeader(); setShowContent(true); }}>ADD NEW VEHICLE</NavLink>
 
-                <NavLink to="/deleteVehicle" onClick={() => { closeHeader(); setShowContent(true); }}>Delete Vehicle</NavLink>
+                <NavLink to="/deleteVehicle" onClick={() => { closeHeader(); setShowContent(true); }}>DELETE VEHICLE</NavLink>
 
                 <button onClick={() => { handleLogout(); closeHeader(); setShowContent(false); }} type="button" className="log-out-btn">
-                  Logout
+                  LOGOUT
                 </button>
 
               </>
@@ -107,11 +107,12 @@ function App() {
           </nav>
 
           <div className="app-social-links">
-            <div><FaFacebook size={22} color="#3b5998" /></div>
-            <div><FaTwitter size={22} color="#1da1f2" /></div>
-            <div><FaLinkedin size={22} color="#0077b5" /></div>
-            <div><FaGithub size={22} color="#171515" /></div>
+            <Link to="https://facebook.com" target="_blank"><FaFacebook size={22} color="#3b5998" /></Link>
+            <Link to="https://twitter.com" target="_blank"><FaTwitter size={22} color="#1da1f2" /></Link>
+            <Link to="https://linkedin.com" target="_blank"><FaLinkedin size={22} color="#0077b5" /></Link>
+            <Link to="https://github.com" target="_blank"><FaGithub size={22} color="#171515" /></Link>
           </div>
+          <div>&copy; 2024 Microverse E.U - B.D & U.M</div>
         </div>
 
         {showContent && (

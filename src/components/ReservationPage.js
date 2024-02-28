@@ -39,7 +39,7 @@ function ReservationPage() {
       navigate('/');
     } catch (error) {
       // Handle error if needed
-      console.error('Error submitting reservation:', error);
+      throw ('Error submitting reservation:', error);
     }
   };
 

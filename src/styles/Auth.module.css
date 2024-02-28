@@ -289,3 +289,9 @@
   width: 100%;
   color: #777;
 }
+
+.success-msg {
+  color: red;
+  padding: 1rem;
+  font-size: 1.2rem;
+}

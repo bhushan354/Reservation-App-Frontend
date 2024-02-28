@@ -6,7 +6,6 @@
   <h3><b>Full-Stack-Capstone-Frontend</b></h3>
 
 </div>
-<!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
 
@@ -28,11 +27,10 @@
   - [🙏 Acknowledgments ](#-acknowledgments-)
   - [📝 License ](#-license-)
 
-<!-- PROJECT DESCRIPTION -->
 
 # 📖 Full-Stack-Capstone-Frontend
 
-*The Full-Stack-Capstone-Frontend* is a mobile web application where user can Make reservation and new car and delet the car.
+*The Full-Stack-Capstone-Frontend* is a web application designed to streamline the process of renting cars. Users can log in securely using their username and access various features through a navigation panel. The system allows users to browse available cars, make reservations, manage bookings, add new cars to the inventory, and delete them. The application is responsive, providing both mobile and desktop versions for a user-friendly experience.
 
 ## 🛠 Built With <a name="built-with"></a>
 - ✅ Ruby
@@ -51,11 +49,18 @@
   </ul>
 </details>
 
-<!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
-- 🔰 *Splash Welcome page*
+- 🔰 *User Authentication:* secure login using email and password.
+- 🔰 *Navigation Panel:* has links to browse and reserve cars. "My Reservations" page for booking management, and "Add Car" and "Delete Car" links for administrators.
+- 🔰 *Main Page:* Displays a list of available cars. Clicking on a specific car provides access to its details page.
+- 🔰 *Details Page:* Shows comprehensive details of the selected car and a "Reserve" button for making a reservation.
+- 🔰 *Reserve Form:* Allows users to reserve a car by selecting a date and city.
+- 🔰 *Delete car:* Accessible only by administrators, displays a list of all cars with a "Delete" button. Deleted cars are marked as removed and do not appear on the main list.
+- 🔰 *Responsive design:* Both mobile and desktop versions for optimal user experience.
+- 🔰 *My Reservations:* Users can view a list of their reservations, including car name, date, and city.
+- 🔰 *Autofill for Reservations:* Reservations autofill username and selected car details. Additional inputs for date and city based on the "Book a Car" design.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -65,7 +70,6 @@ The back-end repo is available [here](https://github.com/bhushan354/Full-Stack-C
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
@@ -120,7 +124,6 @@ The back-end repo is available [here](https://github.com/bhushan354/Full-Stack-C
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- AUTHORS -->
 
 
 ## 👥 Authors <a name="authors"></a>
@@ -146,15 +149,19 @@ The back-end repo is available [here](https://github.com/bhushan354/Full-Stack-C
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- *Add info about each category*
+- *Search and Filter Functionality*
+- *User Ratings and Reviews*
+- *Discounts and Promotions*
+- *Multi-language Support*
+- *Integration with Maps*
+- *Payment Integration*
+- *User Profile Management*
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
 
@@ -164,7 +171,6 @@ Feel free to check the [issues page](https://github.com/bhushan354/Full-Stack-Ca
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- SUPPORT -->
 
 ## ⭐️ Show your support <a name="support"></a>
 
@@ -172,15 +178,13 @@ If you like this project, kindly drop a start ⭐️ for the [repository](git@gi
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to express my heartfelt gratitude to *Microvere* for the invaluable learning experience they have provided. Also I would like to thank to Stanley osagie for his support during react.
+We would like to express my heartfelt gratitude to *Microvere* for the invaluable learning experience they have provided. Also we would like to appreciate each for a great team work we demonstrated during the project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LICENSE -->
 
 ## 📝 License <a name="license"></a>
 
