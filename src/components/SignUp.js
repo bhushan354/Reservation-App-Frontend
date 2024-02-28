@@ -75,7 +75,7 @@ function SignUp() {
 
       if (response.status === 200) {
         // Successful signup
-        navigate('/');
+        navigate('/login');
         setuserName('');
         setfirstName('');
         setlastName('');
