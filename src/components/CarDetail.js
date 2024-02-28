@@ -52,7 +52,11 @@ function CarDetail() {
             <span>{itemDetailsData.duration}</span>
           </p>
           <p>
-            <span>APR Representative:</span>
+            <span>
+              <b>5.9% APR</b>
+              {' '}
+              Representative
+            </span>
             <span>{itemDetailsData.apr}</span>
           </p>
         </div>
