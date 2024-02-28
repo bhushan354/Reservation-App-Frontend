@@ -98,6 +98,10 @@ The back-end repo is available [here](https://github.com/bhushan354/Full-Stack-C
   git clone git@github.com:bhushan354/Full-Stack-Capstone-Frontend.git
   cd Full-Stack-Capstone-Frontend
 ```
+- Add this piece of code after line 19 into the dependencies of package.json file:
+```sh
+      "react-elastic-carousel": "^0.11.5",
+```
 
 - Update the database.yml with your database credentials under the development section
 
