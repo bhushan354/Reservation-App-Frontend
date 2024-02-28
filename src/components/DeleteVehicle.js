@@ -25,8 +25,8 @@ export default function DeleteVehicle() {
       const response = await axios.delete(`http://localhost:3000/api/v1/items/${itemId}`);
       setMessage(response.data.message);
     } catch (error) {
-      setMessage('Error deleting the vehicle');
-      throw ('Error deleting the vehicle:', error);
+      setMessage('Cannot delete Vehicle as you have active reservation for this Vehicle. Please cancel your reservation first');
+      throw ('Cannot delete Vehicle as you have active reservation for this Vehicle. Please cancel your reservation first', error);
     }
   };
 
