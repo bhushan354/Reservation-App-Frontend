@@ -190,7 +190,7 @@ If you like this project, kindly drop a start ⭐️ for the [repository](git@gi
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to express my heartfelt gratitude to *Microvere* for the invaluable learning experience they have provided. Also I would like to thank to Stanley osagie for his support during react.
+We would like to express my heartfelt gratitude to *Microvere* for the invaluable learning experience they have provided. Also we would like to appreciate each for a great team work we demonstrated during the project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
