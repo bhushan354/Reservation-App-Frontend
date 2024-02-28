@@ -93,28 +93,26 @@ The back-end repo is available [here](https://github.com/bhushan354/Full-Stack-C
 
 - Run this command in your command line interface:
 
-sh
+```sh
   cd [YOUR FOLDER]
   git clone git@github.com:bhushan354/Full-Stack-Capstone-Frontend.git
   cd Full-Stack-Capstone-Frontend
+  git checkout dev
+```
 
 - Open the project in your favourite code editor, Add this piece of code into the dependencies of package.json file:
-sh
+
+```sh
       "react-elastic-carousel": "^0.11.5",
-
-
-### Usage
-
-- To run the project, execute the following command:
-
-sh
-   git checkout dev
-   npm install --force
-   PORT=3001 npm start
+```
 
 
 - Now Headover To Backend-Repo and follow setup to make sure your app is working fine with rails as a backend : https://github.com/bhushan354/Full-Stack-Capstone-Backend/tree/dev
 
+```sh
+   npm install --force
+   PORT=3001 npm start
+```
 
 ### Deployment
 
