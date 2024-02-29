@@ -1,70 +1,191 @@
-# Getting Started with Create React App
+<a name="readme-top"></a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+<div align="center">
 
-In the project directory, you can run:
+  <h3><b>Full-Stack-Capstone-Frontend: Vehicle Reservation App</b></h3>
 
-### `npm start`
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# 📗 Table of Contents
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [📗 Table of Contents](#-table-of-contents)
+- [📖 Full-Stack-Capstone-Frontend](#-full-stack-capstone-frontend)
+  - [🛠 Built With ](#-built-with-)
+    - [Tech Stack ](#tech-stack-)
+    - [Key Features ](#key-features-)
+  - [Back-End-Link](#back-end-link)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Usage](#usage)
+    - [Deployment](#deployment)
+  - [👥 Authors ](#-authors-)
+  - [🔭 Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [📝 License ](#-license-)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# 📖 Full-Stack-Capstone-Frontend
 
-### `npm run build`
+*The Full-Stack-Capstone-Frontend* is a web application designed to streamline the process of renting cars. Users can log in securely using their username and access various features through a navigation panel. The system allows users to browse available cars, make reservations, manage bookings, add new cars to the inventory, and delete them. The application is responsive, providing both mobile and desktop versions for a user-friendly experience.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠 Built With <a name="built-with"></a>
+- ✅ Ruby
+- ✅ Ruby on Rails - Api
+- ✅ Postgresql
+- ✅ Linters
+- ✅ React
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Kanban Board
+Link to Kanban Board for this Project: https://github.com/users/bhushan354/projects/6 <br>
+Link to kanban board issue: https://github.com/bhushan354/Full-Stack-Capstone-Frontend/issues/12
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Tech Stack <a name="tech-stack"></a>
 
-### `npm run eject`
+<details>
+  <summary>Language</summary>
+  <ul>
+    <li>Ruby-on-Rails</li>
+    <li>React</li>
+  </ul>
+</details>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Key Features <a name="key-features"></a>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- 🔰 *User Authentication:* secure login using email and password.
+- 🔰 *Navigation Panel:* has links to browse and reserve cars. "My Reservations" page for booking management, and "Add Car" and "Delete Car" links for administrators.
+- 🔰 *Main Page:* Displays a list of available cars. Clicking on a specific car provides access to its details page.
+- 🔰 *Details Page:* Shows comprehensive details of the selected car and a "Reserve" button for making a reservation.
+- 🔰 *Reserve Form:* Allows users to reserve a car by selecting a date and city.
+- 🔰 *Delete car:* Accessible only by administrators, displays a list of all cars with a "Delete" button. Deleted cars are marked as removed and do not appear on the main list.
+- 🔰 *Responsive design:* Both mobile and desktop versions for optimal user experience.
+- 🔰 *My Reservations:* Users can view a list of their reservations, including car name, date, and city.
+- 🔰 *Autofill for Reservations:* Reservations autofill username and selected car details. Additional inputs for date and city based on the "Book a Car" design.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Learn More
+## Back-End-Link
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The back-end repo is available [here](https://github.com/bhushan354/Full-Stack-Capstone-Backend)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 💻 Getting Started <a name="getting-started"></a>
 
-### Analyzing the Bundle Size
+*To get a local copy up and running, follow these steps.*
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Download or clone this [repostory](git@github.com:bhushan354/Full-Stack-Capstone-Frontend.git).
+2. Provide a modern web browser.
 
-### Making a Progressive Web App
+### Prerequisites
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+*In order to run this project you need:*
 
-### Advanced Configuration
+- ✔ Ruby installed in your machine. you can download it from [here](https://www.ruby-lang.org/en/downloads/)
+- ✔ IDE or a code editor installed in your machine.
+- ✔ IRB.
+- ✔ Get Postgresql up and running. you can download it from [here](https://www.postgresql.org/download/windows/).
+- ✔ [Git](https://git-scm.com/downloads) installed in your machine.
+- ✔ Sign in or sign up to your [Github](https://github.com/) account.
+- ✔ A professional editer such as [VS Code](https://code.visualstudio.com/download).
+- ✔ An Updated web browser such as Google Chrome, you can download it from [here](https://www.google.com/chrome/).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Setup
 
-### Deployment
+- Clone this [repository](git@github.com:bhushan354/Full-Stack-Capstone-Frontend.git) to your desired folder:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Run this command in your command line interface:
 
-### `npm run build` fails to minify
+```sh
+  cd [YOUR FOLDER]
+  git clone git@github.com:bhushan354/Full-Stack-Capstone-Frontend.git
+  cd Full-Stack-Capstone-Frontend
+  git checkout dev
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Open the project in your favourite code editor, Add this piece of code into the dependencies of package.json file:
+
+```sh
+      "react-elastic-carousel": "^0.11.5",
+```
+
+
+```sh
+   npm install --force
+   PORT=3001 npm start
+```
+
+- Now Headover To Backend-Repo and follow setup to make sure your app is working fine with rails as a backend : https://github.com/bhushan354/Full-Stack-Capstone-Backend/tree/dev
+
+
+
+## 👥 Authors <a name="authors"></a>
+
+👤 **Muhammad Umair Muqeem**
+
+- GitHub: [@umair-rao](https://github.com/umair-rao)
+- Twitter: [@umair_ra0](https://twitter.com/umair_ra0)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/engr-umair-muqeem/)
+
+👤 *Eugene Omwomo*
+
+- GitHub: [@Omwomo](https://github.com/Omwomo)
+- Twitter: [@eugeneoduor9](https://twitter.com/eugeneoduor9)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/Omwomo)
+
+👤 *Bhushan Deshmukh*
+
+- GitHub: [@bhushan354](https://github.com/bhushan354)
+- LinkedIn: [Bhushan Deshmukh](https://www.linkedin.com/in/bhushan-deshmukh-5777851b1/)
+
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- *Search and Filter Functionality*
+- *User Ratings and Reviews*
+- *Discounts and Promotions*
+- *Multi-language Support*
+- *Integration with Maps*
+- *Payment Integration*
+- *User Profile Management*
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/bhushan354/Full-Stack-Capstone-Frontend/issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+## ⭐️ Show your support <a name="support"></a>
+
+If you like this project, kindly drop a start ⭐️ for the [repository](git@github.com:bhushan354Full-Stack-Capstone-Frontend.git);
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+We would like to express my heartfelt gratitude to *Microvere* for the invaluable learning experience they have provided. Also we would like to appreciate each for a great team work we demonstrated during the project.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
