@@ -105,7 +105,6 @@ The back-end repo is available [here](https://github.com/bhushan354/Full-Stack-C
   cd [YOUR FOLDER]
   git clone git@github.com:bhushan354/Full-Stack-Capstone-Frontend.git
   cd Full-Stack-Capstone-Frontend
-  git checkout dev
 ```
 
 - Open the project in your favourite code editor, Add this piece of code into the dependencies of package.json file:
