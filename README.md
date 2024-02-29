@@ -39,6 +39,10 @@
 - ✅ Linters
 - ✅ React
 
+### Kanban Board
+Link to Kanban Board for this Project: https://github.com/users/bhushan354/projects/6 <br>
+Link to kanban board issue: https://github.com/bhushan354/Full-Stack-Capstone-Frontend/issues/12
+
 ### Tech Stack <a name="tech-stack"></a>
 
 <details>
@@ -119,21 +123,14 @@ The back-end repo is available [here](https://github.com/bhushan354/Full-Stack-C
 - Now Headover To Backend-Repo and follow setup to make sure your app is working fine with rails as a backend : https://github.com/bhushan354/Full-Stack-Capstone-Backend/tree/dev
 
 
-### Deployment
-
-*This project is deployed by the author, no permission for deployment by any other client.*
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 *Umauir Muqeem*
+👤 **Muhammad Umair Muqeem**
 
-- GitHub: [@bhushan354](https://github.com/bhushan354)
+- GitHub: [@umair-rao](https://github.com/umair-rao)
 - Twitter: [@umair_ra0](https://twitter.com/umair_ra0)
-- LinkedIn: [Umair Muqeem](https://linkedin.com/in/engr-umair-muqeem)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/engr-umair-muqeem/)
 
 👤 *Eugene Omwomo*
 
