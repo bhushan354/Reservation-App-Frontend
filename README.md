@@ -3,7 +3,7 @@
 
 <div align="center">
 
-  <h3><b>Full-Stack-Capstone-Frontend</b></h3>
+  <h3><b>Full-Stack-Capstone-Frontend: Vehicle Reservation App</b></h3>
 
 </div>
 
