@@ -103,8 +103,8 @@ The back-end repo is available [here](https://github.com/bhushan354/Full-Stack-C
 
 ```sh
   cd [YOUR FOLDER]
-  git clone git@github.com:bhushan354/Full-Stack-Capstone-Frontend.git
-  cd Full-Stack-Capstone-Frontend
+  git clone git@github.com:bhushan354/Reservation-App-Frontend.git
+  cd Reservation-App-Frontend
   git checkout dev
 ```
 
