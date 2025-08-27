@@ -1,39 +1,56 @@
-# 🚗 Vehicle Reservation App - Backend
+<a name="readme-top"></a>
 
-An API backend for managing vehicle rental & reservations, built with Ruby on Rails.
 
-## 🐳 Docker Backend Setup (Recommended)
+<div align="center">
+
+  <h3><b>Vehicle Reservation App</b></h3>
+
+</div>
+
+
+Vehicle Reservation App is a web application designed to streamline the process of renting cars. Users can log in securely using their username and access various features through a navigation panel. The system allows users to browse available cars, make reservations, manage bookings, add new cars to the inventory, and delete them. The application is responsive, providing both mobile and desktop versions for a user-friendly experience.
+
+## 🛠 Built With <a name="built-with"></a>
+- ✅ Ruby on Rails - Backend
+- ✅ React - Frontend
+- ✅ Postgresql - Database
+- ✅ Docker
+
+## 🐳 Docker Setup (Recommended)
+
 1. **Clone the repo:**
     ```
-     git clone git@github.com:bhushan354/Reservation-App-Backend.git
-     
-     cd Reservation-App-Backend
+     git clone git@github.com:bhushan354/Reservation-App-Frontend.git
+
+     cd Reservation-App-Frontend
     ```
 
-2. **Build and start backend service:**
+2. **Build and start frontend service:**
    ```bash
    docker compose build
    
    docker compose up
-
-   docker compose exec backend bash
-   
-   # Then inside the container app bash run following commands:
-
-   rails db:drop
-   rails db:create
-   rails db:migrate
-   rails db:seed
    ```
+3. **Access frontend:**
 
-3. **Access API documentation:**
+- Make sure you have setup backend if not, Headover To Backend-Repo and follow Docker backend setup to make sure your app is working fine with rails as a backend : https://github.com/bhushan354/Reservation-App-Backend
 
-- http://127.0.0.1:3000/api-docs/index.html
-
-- Now Headover To Frontend-Repo and follow Docker frontend setup to make sure your app is working fine with React as a frontend : https://github.com/bhushan354/Reservation-App-Backend
+- Access application here : http://172.20.0.2:3000
 
 
-## 🛠 Local Setup Instructions 
+### Key Features <a name="key-features"></a>
+
+- 🔰 *User Authentication:* secure login using email and password.
+- 🔰 *Navigation Panel:* has links to browse and reserve cars. "My Reservations" page for booking management, and "Add Car" and "Delete Car" links for administrators.
+- 🔰 *Main Page:* Displays a list of available cars. Clicking on a specific car provides access to its details page.
+- 🔰 *Details Page:* Shows comprehensive details of the selected car and a "Reserve" button for making a reservation.
+- 🔰 *Reserve Form:* Allows users to reserve a car by selecting a date and city.
+- 🔰 *Delete car:* Accessible only by administrators, displays a list of all cars with a "Delete" button. Deleted cars are marked as removed and do not appear on the main list.
+- 🔰 *Responsive design:* Both mobile and desktop versions for optimal user experience.
+- 🔰 *My Reservations:* Users can view a list of their reservations, including car name, date, and city.
+- 🔰 *Autofill for Reservations:* Reservations autofill username and selected car details. Additional inputs for date and city based on the "Book a Car" design.
+
+# Local Setup
 
 ## Prerequisites for Local Setup
 
@@ -48,38 +65,33 @@ An API backend for managing vehicle rental & reservations, built with Ruby on Ra
 - ✔ A professional editer such as [VS Code](https://code.visualstudio.com/download).
 - ✔ An Updated web browser such as Google Chrome, you can download it from [here](https://www.google.com/chrome/).
 
+### Local Setup
 
-1. **Clone the repository:**
-   ```bash
-   git clone git@github.com:bhushan354/Reservation-App-Backend.git
-   cd Reservation-App-Backend
-   ```
+- Clone this [repository](git@github.com:bhushan354/Full-Stack-Capstone-Frontend.git) to your desired folder:
 
-2. **Update database configuration:**
-   - Edit `config/database.yml` with your local PostgreSQL credentials.
+- Run this command in your command line interface:
 
-3. **Ensure Ruby version compatibility:**
-   - Match the Ruby version in your system with the one in the `Gemfile`.
+```sh
+  cd [YOUR FOLDER]
+  git clone git@github.com:bhushan354/Full-Stack-Capstone-Frontend.git
+  cd Full-Stack-Capstone-Frontend
+```
 
-4. **Install dependencies and set up the database:**
-   ```bash
-   bundle install
-   rails db:drop
-   rails db:create
-   rails db:migrate
-   rails db:seed
-   ```
+- Open the project in your favourite code editor, Add this piece of code into the dependencies of package.json file:
 
-5. **Start the Rails server:**
-   ```bash
-   rails server
-   ```
+```sh
+      "react-elastic-carousel": "^0.11.5",
+```
 
-6. **Access API documentation:**
-   - Open your browser and go to:
-     ```
-     http://127.0.0.1:3000/api-docs/index.html
-     ```
+
+```sh
+   npm install --force
+   PORT=3001 npm start
+```
+
+- Now Headover To Backend-Repo and follow local setup to make sure your app is working fine with rails as a backend : https://github.com/bhushan354/Reservation-App-Backend
+
+
 
 ## 📝 Contact Details
 
